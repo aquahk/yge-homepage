@@ -1,0 +1,22 @@
+[
+  { "y": 2026, "t": "A comprehensive functional atlas of ALK kinase-domain variants reveals the resistance landscape to ALK inhibitors", "au": "Oh HC et al.", "j": "Genome Biology", "doi": "10.1186/s13059-026-03977-4" },
+  { "y": 2026, "t": "High-resolution functional mapping of androgen receptor variants", "au": "Oh HC et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-026-01647-1" },
+  { "y": 2025, "t": "Functional assessment of all ATM single-nucleotide variants using prime editing and deep learning", "au": "Lee KS et al.", "j": "Cell", "doi": "10.1016/j.cell.2025.05.046" },
+  { "y": 2025, "t": "Comprehensive resistance profiling of CML-associated ABL1 variants against five tyrosine-kinase inhibitors using prime editing", "au": "Jung Y et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-025-01531-4" },
+  { "y": 2025, "t": "High-throughput evaluation of in vitro CRISPR activities enables optimized large-scale multiplex enrichment of rare variants", "au": "Yeo JH et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-025-01535-0" },
+  { "y": 2024, "t": "Saturation profiling of drug-resistant genetic variants using prime editing", "au": "Kim Y et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-024-02465-z" },
+  { "y": 2024, "t": "SynDesign: web-based prime-editing guide-RNA design and evaluation for saturation genome editing", "au": "Park J et al.", "j": "Nucleic Acids Res.", "doi": "10.1093/nar/gkae304" },
+  { "y": 2024, "t": "In vivo adenine base editing rescues adrenoleukodystrophy in a humanized mouse model", "au": "Gopalappa R et al.", "j": "Mol. Ther.", "doi": "10.1016/j.ymthe.2024.05.027" },
+  { "y": 2023, "t": "Prediction of efficiencies for diverse prime-editing systems in multiple cell types", "au": "Yu G et al.", "j": "Cell", "doi": "10.1016/j.cell.2023.03.034" },
+  { "y": 2023, "t": "Deep-learning models to predict the editing efficiencies and outcomes of diverse base editors", "au": "Kim N et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-023-01792-x" },
+  { "y": 2023, "t": "Sniper2L is a high-fidelity Cas9 variant with high activity", "au": "Kim YH et al.", "j": "Nat. Chem. Biol.", "doi": "10.1038/s41589-023-01279-5" },
+  { "y": 2023, "t": "Massively parallel evaluation and computational prediction of the activities and specificities of 17 small Cas9s", "au": "Seo SY et al.", "j": "Nat. Methods", "doi": "10.1038/s41592-023-01875-2" },
+  { "y": 2022, "t": "High-throughput functional evaluation of human cancer-associated mutations using base editors", "au": "Kim Y et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-022-01276-4" },
+  { "y": 2021, "t": "Application of prime editing to the correction of mutations and phenotypes in adult mice with liver and eye diseases", "au": "Jang H et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-021-00788-9" },
+  { "y": 2021, "t": "Generation of a more efficient prime editor 2 by addition of the Rad51 DNA-binding domain", "au": "Song M et al.", "j": "Nat. Commun.", "doi": "10.1038/s41467-021-25928-2" },
+  { "y": 2021, "t": "Recording of elapsed time and temporal information about biological events using Cas9", "au": "Park J et al.", "j": "Cell", "doi": "10.1016/j.cell.2021.01.014" },
+  { "y": 2020, "t": "Predicting the efficiency of prime-editing guide RNAs in human cells", "au": "Kim HK et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-020-0677-y" },
+  { "y": 2020, "t": "Sequence-specific prediction of the efficiencies of adenine and cytosine base editors", "au": "Song M et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-020-0573-5" },
+  { "y": 2019, "t": "SpCas9 activity prediction by DeepSpCas9, a deep-learning model with high generalization performance", "au": "Kim HK et al.", "j": "Sci. Adv.", "doi": "10.1126/sciadv.aax9249" },
+  { "y": 2018, "t": "Deep learning improves prediction of CRISPR-Cpf1 guide-RNA activity", "au": "Kim HK et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/nbt.4061" }
+]

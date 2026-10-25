@@ -1,0 +1,10 @@
+[
+  { "date": "2026-07", "kind": "paper", "title": "Androgen receptor variant atlas published in Nature Biomedical Engineering", "detail": "High-resolution functional mapping of AR variants (Oh et al.)." },
+  { "date": "2026-02", "kind": "paper", "title": "ALK kinase-domain variant atlas published in Genome Biology", "detail": "Resistance landscape to ALK inhibitors (Oh et al.)." },
+  { "date": "2025-06", "kind": "paper", "title": "All ATM variants functionally assessed, published in Cell", "detail": "Prime editing + deep learning across every ATM SNV (Lee et al.)." },
+  { "date": "2023", "kind": "award", "title": "UiDang Academic Award, Korean Medical Association", "detail": "Awarded to Prof. Hyongbum Henry Kim." },
+  { "date": "2022", "kind": "award", "title": "Elected Fellow, Korean Academy of Science and Technology (KAST)" },
+  { "date": "2021", "kind": "award", "title": "Kyung-Ahm Prize in Biological Science" },
+  { "date": "2020", "kind": "award", "title": "Macrogen Scientist Award · Yong-Woon Medical Award" },
+  { "date": "2019", "kind": "award", "title": "Science, Technology and Researcher Award, Ministry of Science and ICT" }
+]

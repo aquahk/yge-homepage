@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kim Lab Updates Panel</title>
+<style>
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  img{max-width:100%;height:auto}
+  [hidden]{display:none!important}
+  /* Layout: a compact, embeddable panel — tabbed (Publications / News & Awards),
+     reads its content from JSON the bot updates. Light by default (Google Sites embeds
+     render light), dark-aware. Teal accent to match the lab identity. */
+  :root{
+    --bg:#ffffff; --fg:#17201e; --muted:#5c6672; --line:#e6e9ee;
+    --accent:#0b7d73; --accent-ink:#086258; --accent-soft:rgba(11,125,115,.10);
+    --chip:#f1f4f6; --award:#b7791f; --paper:#0b7d73;
+    --font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --bg:#0e1116; --fg:#e8ebf0; --muted:#9aa2b1; --line:#242a35;
+    --accent:#2dd4bf; --accent-ink:#5eead4; --accent-soft:rgba(45,212,191,.12);
+    --chip:#1a1f29; --award:#e0a44a; --paper:#2dd4bf; color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0e1116; --fg:#e8ebf0; --muted:#9aa2b1; --line:#242a35;
+    --accent:#2dd4bf; --accent-ink:#5eead4; --accent-soft:rgba(45,212,191,.12);
+    --chip:#1a1f29; --award:#e0a44a; --paper:#2dd4bf; color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.55;margin:0}
+  .wrap{max-width:900px;margin:0 auto;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px}
+  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .tab{appearance:none;border:0;background:none;font:inherit;font-weight:600;font-size:.95rem;
+    color:var(--muted);padding:9px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tab[aria-selected="true"]{color:var(--accent-ink);border-bottom-color:var(--accent)}
+  .tab:hover{color:var(--fg)}
+  .panel[hidden]{display:none}
+
+  /* publications */
+  .yr{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--accent-ink);
+    padding:14px 0 6px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg)}
+  .pub{display:grid;grid-template-columns:1fr auto;gap:4px 18px;align-items:baseline;
+    padding:11px 0;border-bottom:1px solid var(--line)}
+  .pub .t{font-size:.98rem;font-weight:500;min-width:0}
+  .pub .t a{color:var(--fg);text-decoration:none}
+  .pub .t a:hover{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+  .pub .au{font-style:italic;color:var(--muted);font-size:.86rem;margin-top:2px}
+  .pub .j{font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap;text-align:right}
+  .pub .j b{color:var(--accent-ink);font-weight:600}
+  @media (max-width:560px){.pub{grid-template-columns:1fr;gap:3px}.pub .j{text-align:left}.yr{position:static}}
+
+  /* news */
+  .item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .when{font-family:var(--mono);font-size:.74rem;color:var(--muted);white-space:nowrap;min-width:52px;padding-top:3px}
+  .body{min-width:0}
+  .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 7px;border-radius:999px;background:var(--accent-soft);margin-right:7px;vertical-align:1px}
+  .badge.award{color:var(--award);background:rgba(183,121,31,.12)}
+  .badge.paper{color:var(--paper);background:var(--accent-soft)}
+  .item .h{font-weight:600;font-size:.97rem}
+  .item .d{color:var(--muted);font-size:.88rem;margin-top:2px}
+
+  .note{color:var(--muted);font-size:.8rem;margin-top:16px;padding-top:12px;border-top:1px dashed var(--line)}
+  .err{color:var(--muted);padding:20px 0;font-size:.9rem}
+  a.more{color:var(--accent-ink);font-size:.86rem;text-decoration:none}
+  a.more:hover{text-decoration:underline}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-pubs" role="tab" aria-selected="true" aria-controls="p-pubs">Publications</button>
+    <button class="tab" id="tab-news" role="tab" aria-selected="false" aria-controls="p-news">News &amp; Awards</button>
+  </div>
+
+  <section class="panel" id="p-pubs" role="tabpanel" aria-labelledby="tab-pubs">
+    <div id="pubs"><div class="err">Loading publications…</div></div>
+    <div class="note">Showing selected recent publications. A full list is on
+      <a class="more" href="https://orcid.org/0000-0002-4693-738X" target="_blank" rel="noopener">ORCID</a> and
+      <a class="more" href="https://pubmed.ncbi.nlm.nih.gov/?term=Kim+Hyongbum+Henry" target="_blank" rel="noopener">PubMed</a>.</div>
+  </section>
+
+  <section class="panel" id="p-news" role="tabpanel" aria-labelledby="tab-news" hidden>
+    <div id="news"><div class="err">Loading news…</div></div>
+  </section>
+</div>
+
+<script>
+  // Tabs
+  var tabs=[document.getElementById('tab-pubs'),document.getElementById('tab-news')];
+  var panels={'tab-pubs':document.getElementById('p-pubs'),'tab-news':document.getElementById('p-news')};
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.setAttribute('aria-selected', x===t ? 'true':'false');});
+    for(var k in panels){panels[k].hidden = (k!==t.id);}
+  });});
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // Publications — read from publications.json (the file the bot / ORCID sync keeps current)
+  fetch('publications.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
+    list.sort(function(a,b){return b.y-a.y;});
+    var el=document.getElementById('pubs'), html='', last=null;
+    list.forEach(function(p){
+      if(p.y!==last){html+='<div class="yr">'+esc(p.y)+'</div>';last=p.y;}
+      html+='<article class="pub"><div><div class="t"><a href="https://doi.org/'+esc(p.doi)+'" target="_blank" rel="noopener">'+esc(p.t)+'</a></div>'+
+        '<div class="au">'+esc(p.au)+'</div></div>'+
+        '<div class="j"><b>'+esc(p.j)+'</b><br>'+esc(p.y)+'</div></article>';
+    });
+    el.innerHTML=html || '<div class="err">No publications yet.</div>';
+  }).catch(function(){document.getElementById('pubs').innerHTML='<div class="err">Couldn’t load publications.</div>';});
+
+  // News & Awards — read from news.json (what the Slack bot appends to)
+  fetch('news.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
+    list.sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
+    var el=document.getElementById('news'), html='';
+    list.forEach(function(n){
+      var kind=(n.kind||'news').toLowerCase();
+      html+='<div class="item"><div class="when">'+esc(n.date)+'</div><div class="body">'+
+        '<div class="h"><span class="badge '+esc(kind)+'">'+esc(kind)+'</span>'+esc(n.title)+'</div>'+
+        (n.detail?'<div class="d">'+esc(n.detail)+'</div>':'')+'</div></div>';
+    });
+    el.innerHTML=html || '<div class="err">No news yet.</div>';
+  }).catch(function(){document.getElementById('news').innerHTML='<div class="err">Couldn’t load news.</div>';});
+</script>
+</body>
+</html>
