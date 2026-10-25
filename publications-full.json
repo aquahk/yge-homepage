@@ -1,0 +1,384 @@
+[
+ {
+  "y": 2026,
+  "c": "Han Y, Kim HH+. A non-viral path to efficient and safe prime editing in vivo. Nat. Nanotechnol. 2026.",
+  "doi": "10.1038/s41565-026-02205-1"
+ },
+ {
+  "y": 2026,
+  "c": "Kim HK*, Kim HH+. Evaluation and prediction of guide RNA activities in genome-editing tools. Nat. Rev. Bioeng. 2026; 4(1):82-97.",
+  "doi": "10.1038/s44222-025-00352-z"
+ },
+ {
+  "y": 2026,
+  "c": "Oh H-C*, Chang Y, Park J, Cheong Y, Lee KS, Han H, Kim HH+. High-resolution functional mapping of androgen receptor variants. Nat. Biomed. Eng. 2026.",
+  "doi": "10.1038/s41551-026-01647-1"
+ },
+ {
+  "y": 2026,
+  "c": "Oh H-C*, Kim HH+. A comprehensive functional atlas of ALK kinase-domain variants reveals the resistance landscape to ALK inhibitors. Genome Biol. 2026.",
+  "doi": "10.1186/s13059-026-03977-4"
+ },
+ {
+  "y": 2025,
+  "c": "Jo DH*, Jang H*, Cho CS, Lee SJ, Heo JH, Kim JA, Kim SJ, Ryu W, Park C-W, Kang B-C, Gee HY, Sung YH+, Kim HH+, Kim JH+. Intravitreal adenine base editing of RS1 improves vision in a preclinical mouse model of retinoschisis. Mol Ther. 2025; 33(8):3955-3967.",
+  "doi": "10.1016/j.ymthe.2025.04.021"
+ },
+ {
+  "y": 2025,
+  "c": "Jung Y*, Yu G*, Oh H-C, Lee J-H, Jeon E, Bae J, Sim T, Kim HH+. Comprehensive resistance profiling of CML-associated ABL1 variants against five tyrosine-kinase inhibitors using prime editing. Nat. Biomed. Eng. 2025; 10(7):1392-1409.",
+  "doi": "10.1038/s41551-025-01531-4"
+ },
+ {
+  "y": 2025,
+  "c": "Kim Y, Oh HC, Lee S, Kim HH+. Saturation profiling of drug-resistant genetic variants using prime editing. Nat. Biotechnol. 2025; 43(9):1471-1484.",
+  "doi": "10.1038/s41587-024-02465-z"
+ },
+ {
+  "y": 2025,
+  "c": "Lee KS, Min J-G, Cheong Y, Oh HC, Jung SY, Park JI, Song M, Seo JH, Cho SR, Kim HH+. Functional assessment of all ATM SNVs using prime editing and deep learning. Cell. 2025; 188(18):5081-5099.e27.",
+  "doi": "10.1016/j.cell.2025.05.046"
+ },
+ {
+  "y": 2025,
+  "c": "Noh B*, Gopalappa R*, Lin H, Gee HY, Choi JY, Kim HH+, Jung J+. Engineered virus-like particles for in vivo gene editing ameliorate hearing loss in murine DFNA2 model. Mol Ther. 2025; 33(12):6449-6462.",
+  "doi": "10.1016/j.ymthe.2025.08.049"
+ },
+ {
+  "y": 2025,
+  "c": "Sung K*, Jung Y*, Kim N*, Kim Y-W, Kim HH+, Kim SK+, Bae S+. A rational engineering strategy for structural dynamics modulation enables target specificity enhancement of the Cas9 nuclease. Nucleic Acids Res. 2025; 53(12):gkaf535.",
+  "doi": "10.1093/nar/gkaf535"
+ },
+ {
+  "y": 2025,
+  "c": "Wu J*, Jang H*, Kwak H, Son M, Jiang W, Hwang H-Y, Jo DH, Kim D, Kim HH+, Kim JH+. Engineered virus-like particle-assembled Vegfa-targeting Cas9 ribonucleoprotein treatment alleviates neovascularization in wet age-related macular degeneration. Genome Biol. 2025; 26(1):346.",
+  "doi": "10.1186/s13059-025-03774-5"
+ },
+ {
+  "y": 2025,
+  "c": "Yeo JH*, Lee S, Kim S, Min JG, Gopalappa R, Oh HC, Kim HK, Nam EJ, Kim HH+. High-throughput evaluation of in vitro CRISPR activities enables optimized large-scale multiplex enrichment of rare variants. Nat. Biomed. Eng. 2025; 10(7):1410-1430.",
+  "doi": "10.1038/s41551-025-01535-0"
+ },
+ {
+  "y": 2024,
+  "c": "Gopalappa R, Lee M, Kim G, Jung ES, Lee H, Hwang HY, Lee JG, Kim SJ, Yoo HJ, Sung YH, Kim D, Baek IJ, Kim HH+. In vivo adenine base editing rescues adrenoleukodystrophy in a humanized mouse model. Molecular Therapy. 2024. 32(7):2190-2206"
+ },
+ {
+  "y": 2024,
+  "c": "Kim N*, Choi S*, Kim S, Song M, Seo JH, Min S, Park J, Cho S-R, Kim HH+. Deep learning models to predict the editing efficiencies and outcomes of diverse base editors. Nat. Biotechnol. 2024; 42(3):484-497.",
+  "doi": "10.1038/s41587-023-01792-x"
+ },
+ {
+  "y": 2024,
+  "c": "Park J, Yu G, Seo SY, Yang J, Kim HH+. SynDesign: web-based prime editing guide RNA design and evaluation tool for saturation genome editing. Nucleic Acids Res. 2024; 52(W1):W121-W125.",
+  "doi": "10.1093/nar/gkae304"
+ },
+ {
+  "y": 2023,
+  "c": "Jo DH, Bae S, Kim HH, Kim JS, Kim JH. In vivo application of base and prime editing to treat inherited retinal diseases. Prog Retin Eye Res. 2023. 94:101132"
+ },
+ {
+  "y": 2023,
+  "c": "Kim YH*, Kim N*, Okafor I*, Choi S, Min S, Lee J, Bae SM, Choi K, Choi J, Harihar V, Kim Y, Kim JS, Kleinstiver BP, Lee JK, Ha T, Kim HH+. Sniper2L is a high-fidelity Cas9 variant with high activity. Nat Chem Biol. 2023; 19(8):972-980.",
+  "doi": "10.1038/s41589-023-01279-5"
+ },
+ {
+  "y": 2023,
+  "c": "Seo S-Y*, Min S, Lee S, Seo JH, Park J, Kim HK, Song M, Baek D, Cho S-R, Kim HH+. Massively parallel evaluation and computational prediction of the activities and specificities of 17 small Cas9s. Nat Methods. 2023; 20(7):999-1009.",
+  "doi": "10.1038/s41592-023-01875-2"
+ },
+ {
+  "y": 2023,
+  "c": "Yu G*, Kim HK*, Park J, Kwak H, Cheong Y, Kim D, Kim J, Kim J, Kim HH+. Prediction of efficiencies for diverse prime editing systems in multiple cell types. Cell. 2023. 186(10):2256-2272."
+ },
+ {
+  "y": 2022,
+  "c": "Jang H*, Jo DH*, Cho CS, Shin JH, Seo JH, Yu G, Gopalappa R, Kim D, Cho S-R, Kim JH+, Kim HH+. Application of prime editing to the correction of mutations and phenotypes in adult mice with liver and eye diseases. Nat. Biomed. Eng. 2022; 6(2):181-194"
+ },
+ {
+  "y": 2022,
+  "c": "Kim Y*, Lee S*, Cho S, Park J, Chae D, Park T, Minna JD, Kim HH+. High-throughput functional evaluation of human cancer-associated mutations using base editors. Nat. Biotechnol. 2022; 40(6): 874-884."
+ },
+ {
+  "y": 2022,
+  "c": "Lim JM*, Kim HH+. Basic Principles and Clinical Applications of CRISPR-Based Genome Editing. Yonsei Med J. 2022; 63(2):105-113"
+ },
+ {
+  "y": 2022,
+  "c": "Noh B, Rim JH, Gopalappa R, Lin H, Kim KM, Kang MJ, Gee HY, Choi JY, Kim HH, Jung J. In vivo outer hair cell gene editing ameliorates progressive hearing loss in dominant-negative Kcnq4 murine model. Theranostics, 2022, 12(5):2465-2482"
+ },
+ {
+  "y": 2022,
+  "c": "Shin W, Jeong S, Lee JU, Jeong SY, Shin J, Kim HH+, Cheon J, Lee JH. Magnetogenetics with Piezo1 Mechanosensitive Ion Channel for CRISPR Gene Editing. Nano Lett, 2022, 22(18):7415-7422."
+ },
+ {
+  "y": 2022,
+  "c": "Sik Jung E*, Hun Kim J, Chang MY, Hong W, Quan Z, Hyun Kim S, You S, Kim DS, Jang J, Lee SH, Kim HH, Chul Kang H. Generation of mutation-corrected induced pluripotent stem cell lines derived from adrenoleukodystrophy patient by using homology directed repair. Stem Cell Res. 2022; 59:102664.",
+  "doi": "10.1016/j.scr.2022.102664"
+ },
+ {
+  "y": 2021,
+  "c": "Kim HK*, Yu G*, Park J, Min S, Lee S, Yoon S, Kim HH+. Predicting the efficiency of prime-editing guide RNAs in human cells. Nat. Biotechnol. 2021; 39(2):198-206."
+ },
+ {
+  "y": 2021,
+  "c": "Kim J, Park K, Kim MJ, Lim H, Kim KH, Kim SW, Lee ES, Kim HH, Kim SJ, Hur KY, Kim JH, Ahn JH, Yoon KH, Kim JW, Lee MS. An autophagy enhancer ameliorates diabetes of human IAPP-transgenic mice through clearance of amyloidogenic oligomer. Nature Communications. 2021; 12(1):183"
+ },
+ {
+  "y": 2021,
+  "c": "Lim JM*, Kim HH+. Improving CRISPR tools by elucidating DNA repair. Nat. Biotechnol. 2021; 39(12):1512-1514."
+ },
+ {
+  "y": 2021,
+  "c": "Park J*, Lim JM, Jung I, Heo SJ, Park J, Chang Y, Kim HK, Jung D, Yu JH, Min S, Yoon S, Cho SR, Park T, Kim HH+. Recording of elapsed time and temporal information about biological events using Cas9. Cell. 2021; 184(4):1047-1063."
+ },
+ {
+  "y": 2021,
+  "c": "Song M*, Lim JM*, Min S, Oh JS, Kim DY, Woo JS, Nishimasu Hiroshi, Cho SR, Yoon SR, Kim HH+. Generation of a more efficient prime editor 2 by addition of the Rad51 DNA-binding domain. Nat. Commun. 2021; 12:5617"
+ },
+ {
+  "y": 2020,
+  "c": "Chae D*, Lee J, Lee N, Park K, Moon SJ+, Kim HH+. Chemical controllable gene drive in Drosophila. ACS Synth Biol. 2020; 9(9):2362-2377"
+ },
+ {
+  "y": 2020,
+  "c": "Das S, Chandrasekaran AP, Suresh B, Haq S, Kang JH, Lee SJ, Kim J, Kim J, Lee S, Kim H+, Kim KS+, Ramakrishna S+. Genome-scale screening of deubiquitinase subfamily identifies USP3 as a stabilizer of Cdc25A regulating cell cycle in cancer. Cell Death Differ. 2020; 27(11):3004-3020"
+ },
+ {
+  "y": 2020,
+  "c": "Kim HK*, Lee S, Kim Y, Park J, Min S, Choi JW, Huang TP, Yoon S, Liu DR, Kim HH+. High-throughput analysis of the activities of xCas9, SpCas9-NG and SpCas9 at matched and mismatched target sequences in human cells. Nat Biomed Eng. 2020; 4(1):111-124."
+ },
+ {
+  "y": 2020,
+  "c": "Kim N*, Kim HK*, Lee S, Seo JH, Choi JW, Park J, Min SW, Yoon S, Cho SR, Kim HH+. Prediction of the sequence-specific cleavage activity of Cas9 variants. Nat. Biotechnol. 2020; 38(11):1328-1336"
+ },
+ {
+  "y": 2020,
+  "c": "Song M*, Kim HK*, Lee S*, Kim YG, Seo SY, Park JM, Choi JW, Jang HW, Shin JH, Min SW, Zhejiu Quan, Kim JH, Kang HC, Yoon S, Kim HH+. Sequence-specific prediction of the efficiencies of adenine and cytosine base editors. Nat. Biotechnol. 2020; 38(9):1037-1043"
+ },
+ {
+  "y": 2019,
+  "c": "Chang MY, Oh B, Choi JE, Sulistio YA, Woo HJ, Jo A, Kim J, Kim EH, Kim SW, Hwang J, Park J, Song JJ, Kwon OC, Kim HH, Kim YH, Ko JY, Heo JY, Lee MJ, Lee M, Choi M, Chung SJ, Lee HS, Lee SH. LIN28A loss of function is associated with Parkinson's disease pathogenesis. EMBO Journal. 2019; 38(24):e101196"
+ },
+ {
+  "y": 2019,
+  "c": "Kim HK*, Kim Y, Lee S, Min S, Bae JY, Choi JW, Park J, Jung D, Yoon S, Kim HH+. SpCas9 activity prediction by DeepSpCas9, a deep learning-based model with high generalization performance. Sci. Adv. 2019; 5(11):eaax9249."
+ },
+ {
+  "y": 2019,
+  "c": "Lee ES*, Moon S, Abu-Bonsrah KD, Kim YK, Hwang MY, Kim YJ, Kim S, Hwang NS, Kim HH, Kim BJ. Programmable Nuclease-Based Integration into Novel Extragenic Genomic Safe Harbor Identified from Korean Population-Based CNV Analysis. Mol Ther Oncolytics. 2019; 14:253-265.",
+  "doi": "10.1016/j.omto.2019.07.001"
+ },
+ {
+  "y": 2019,
+  "c": "Lee HJ, Gopalappa R, Sunwoo H, Choi SW, Ramakrishna S, Lee JT, Kim HH+, Nam JW+. En bloc and segmental deletions of human XIST reveal X chromosome inactivation-involving RNA elements. Nucleic Acids Res. 2019; 47(8):3875-3887."
+ },
+ {
+  "y": 2019,
+  "c": "Lee M*, Kim HH+. Therapeutic application of the CRISPR system: current issues and new prospects. Hum Genet. 2019; 138(6):563-590."
+ },
+ {
+  "y": 2018,
+  "c": "Gopalappa R*, Suresh B, Ramakrishna S+, Kim HH+. Paired D10A Cas9 nickases are sometimes more efficient than individual nucleases for gene disruption. Nucleic Acids Research. 2018; 46(12):e71"
+ },
+ {
+  "y": 2018,
+  "c": "Kim HK*, Min S, Song M, Jung S, Choi JW, Kim Y, Lee S, Yoon S+, Kim HH+. Deep learning improves prediction of CRISPR-Cpf1 guide RNA activity. Nat. Biotechnol. 2018; 36(3):239-241"
+ },
+ {
+  "y": 2018,
+  "c": "Kim W*, Lee S, Kim HS, Song M, Cha YH, Kim YH, Shin J, Lee ES, Joo Y, Song JJ, Choi EJ, Choi JW, Lee J, Kang M, Yook JI, Lee MG, Kim YS, Paik S, Kim HH+. Targeting mutant KRAS with CRISPR-Cas9 controls tumor growth. Genome Res. 2018; 28(3):374-382"
+ },
+ {
+  "y": 2018,
+  "c": "Park SM, Lim JS, Ramakrishna S, Kim SH, Kim WK, Lee J, Kang HC, Reiter JF, Kim DS, Kim HH+, Lee JH+. Brain Somatic Mutations in MTOR Disrupt Neuronal Ciliogenesis, Leading to Focal Cortical Dyslamination. Neuron. 2018; 99(1):83-97."
+ },
+ {
+  "y": 2018,
+  "c": "Shin JH*, Jung S, Ramakrishna S, Kim HH+, Lee J+. In vivo gene correction with targeted sequence substitution through microhomology-mediated end joining. Biochem Biophys Res Commun. 2018; 502(1):116-122."
+ },
+ {
+  "y": 2017,
+  "c": "Cho B, Cho HM, Jo Y, Kim HD, Song M, Moon C, Kim H, Kim K, Sesaki H, Rhyu IJ, Kim H, Sun W. Constriction of the mitochondrial inner compartment is a priming event for mitochondrial division. Nat Commun. 2017; 8:15754."
+ },
+ {
+  "y": 2017,
+  "c": "Cho HM, Kim PH, Chang HK, Shen YM, Bonsra K, Kang BJ, Yum SY, Kim JH, Lee SY, Choi MC, Kim HH, Jang G, Cho JY. Targeted Genome Engineering to Control VEGF Expression in Human Umbilical Cord Blood-Derived Mesenchymal Stem Cells: Potential Implications for the Treatment of Myocardial Infarction. Stem Cells Transl Med. 2017; 6(3):1040-1051."
+ },
+ {
+  "y": 2017,
+  "c": "Das S, Suresh B, Kim HH, Ramakrishna S+. RanBPM: a potential therapeutic target for modulating diverse physiological disorders. Drug Discov Today. 2017; 22(12):1816-1824."
+ },
+ {
+  "y": 2017,
+  "c": "Kim HK*, Song M, Lee J, Menon AV, Jung S, Kang YM, Choi JW, Woo E, Koh HC, Nam JW, Kim H+. In vivo high-throughput profiling of CRISPR-Cpf1 activity. Nat. Methods. 2017; 14(2):153-159"
+ },
+ {
+  "y": 2017,
+  "c": "Lim JS, Gopalappa R, Kim SH, Ramakrishna S, Lee M, Kim W, Kim J, Park SM, Lee J, Oh JH, Kim HD, Park CH, Lee JS, Kim S, Kim SD, Han JM, Kang HC+, Kim HH+, Lee JH+. Somatic Mutations in TSC1 and TSC2 cause focal cortical dysplasia. Am J Hum Genet. 2017; 100(3):454-472"
+ },
+ {
+  "y": 2017,
+  "c": "Suresh B, Ramakrishna S, Kim H+. Cell-Penetrating Peptide-Mediated Delivery of Cas9 Protein and Guide RNA for Genome Editing. Methods Mol Biol. 2017; 1507:81-94."
+ },
+ {
+  "y": 2016,
+  "c": "Chandrasekaran AP, Suresh B, Kim HH, Kim KS, Ramakrishna S. Fate Determination of Stem Cells by Deubiquitinating Enzymes. Stem Cells. 2016; 35(1):9-16."
+ },
+ {
+  "y": 2016,
+  "c": "Cho SR, Suh H, Yu JH, Kim H, Seo JH, Seo CH. Astroglial Activation by an Enriched Environment after Transplantation of Mesenchymal Stem Cells Enhances Angiogenesis after Hypoxic-Ischemic Brain Injury. Int J Mol Sci. 2016; 17(9):1550."
+ },
+ {
+  "y": 2016,
+  "c": "Chung WY, Song M, Park JH, Namkung W, Lee J, Kim H+, Lee MG, Kim JY. Generation of dF508-CFTR T84 cell lines by CRISPR/Cas9-mediated genome editing. Biotechnol Lett. 2016; 38(12):2023-2034."
+ },
+ {
+  "y": 2016,
+  "c": "Kim H+. Heroes of peer review: Hyongbum (Henry) Kim. Genome Biol. 2016; 17(1):200."
+ },
+ {
+  "y": 2016,
+  "c": "Kim YS, Kim HR, Kim H, Yang SC, Park M, Yoon JA, Lim HJ, Hong SH, DeMayo FJ, Lydon JP, Choi Y, Lee DR, Song H. Deficiency in DGCR8-dependent canonical microRNAs causes infertility due to multiple abnormalities during uterine development in mice. Sci Rep. 2016; 6:20242"
+ },
+ {
+  "y": 2016,
+  "c": "Lee J, Chung JH, Kim HM, Kim DW, Kim H+. Designed nucleases for targeted genome editing. Plant Biotechnol J. 2016; 14(2):448-62."
+ },
+ {
+  "y": 2016,
+  "c": "Seo JH, Lee MY, Yu JH, Kim MS, Song M, Seo CH, Kim HH+, Cho SR+. In Situ Pluripotency Factor Expression Promotes Functional Recovery From Cerebral Ischemia. Mol Ther. 2016; 24(9):1538-49."
+ },
+ {
+  "y": 2016,
+  "c": "Suresh B, Lee J, Kim H+, Ramakrishna S+. Regulation of pluripotency and differentiation by deubiquitinating enzymes. Cell Death Differ. 2016; 23(8):1257-64."
+ },
+ {
+  "y": 2016,
+  "c": "Won YH, Lee MY, Choi YC, Ha Y, Kim H, Kim DY, Kim MS, Yu JH, Seo JH, Kim M, Cho SR, Kang SW. Elucidation of Relevant Neuroinflammation Mechanisms Using Gene Expression Profiling in Patients with Amyotrophic Lateral Sclerosis. PLoS One. 2016; 11(11):e0165290"
+ },
+ {
+  "y": 2015,
+  "c": "Beloor J, Ramakrishna S, Nam K, Choi CS, Kim J, Kim SH, Cho HJ, Shin H, Kim H, Kim SW, Lee SK, Kumar P. Effective gene delivery into human stem cells with a cell-targeting peptide-modified bioreducible polymer. Small. 2015; 11(17):2069-79"
+ },
+ {
+  "y": 2015,
+  "c": "Cho SJ, Kim SY, Jeong HC, Cheong H, Kim D, Park SJ, Choi JJ, Kim H, Chung HM, Moon SH, Cha HJ. Repair of ischemic injury by pluripotent stem cell based cell therapy without teratoma through selective photosensitivity. Stem Cell Reports. 2015; 5(6):1067-80."
+ },
+ {
+  "y": 2015,
+  "c": "Jo YI, Kim H, Ramakrishna S. Recent developments and clinical studies utilizing engineered zinc finger nuclease technology. Cell Mol Life Sci. 2015; 72(20):3819-30."
+ },
+ {
+  "y": 2015,
+  "c": "Jo YI, Suresh B, Kim H, Ramakrishna S. CRISPR/Cas9 system as an innovative genetic engineering tool: Enhancements in sequence specificity and delivery methods. Biochim Biophys Acta. 2015; 1856(2):234-43"
+ },
+ {
+  "y": 2015,
+  "c": "Kim H*, Han JW, Lee JY, Choi YJ, Sohn YD, Song M, Yoon YS. Diabetic mesenchymal stem cells are ineffective for improving limb ischemia due to their impaired angiogenic capability. Cell Transplant. 2015; 24(8):1571-84."
+ },
+ {
+  "y": 2015,
+  "c": "Kim MS, Yu JH, Kim CH, Choi JY, Seo JH, Lee MY, Yi CH, Choi TH, Ryu YH, Lee JE, Lee BH, Kim H, Cho SR. Environmental enrichment enhances synaptic plasticity by internalization of striatal dopamine transporters. J Cereb Blood Flow Metab. 2015; 36(12):2122-2133"
+ },
+ {
+  "y": 2015,
+  "c": "Kim YH*, Kim HO, Baek EJ, Kurita R, Cha HJ, Nakamura Y, Kim H+. Rh D blood group conversion using transcription activator-like effector nucleases. Nat. Commun. 2015; 6:7451."
+ },
+ {
+  "y": 2015,
+  "c": "Kwon OS, Oh E, Park JR, Lee JS, Bae GY, Koo JH, Kim H, Choi YL, Choi YS, Kim J, Cha HJ. GalNAc-T14 promotes metastasis through Wnt dependent HOXB9 expression in lung adenocarcinoma. Oncotarget. 2015; 6(39):41916-28"
+ },
+ {
+  "y": 2014,
+  "c": "Chang MY, Rhee YH, Yi SH, Lee SJ, Kim RK, Kim H, Park CH, Lee SH. Doxycycline enhances survival and self-renewal of human pluripotent stem cells. Stem Cell Reports. 2014; 3(2):353-364."
+ },
+ {
+  "y": 2014,
+  "c": "Dad A-BK*, Ramakrishna S, Song M, Kim H+. Enhanced gene disruption by programmable nucleases delivered by a minicircle vector. Gene Ther. 2014; 21(11):921-30."
+ },
+ {
+  "y": 2014,
+  "c": "Kim H*, Kim JS. A guide to genome engineering with programmable nucleases. Nat. Rev. Genet. 2014; 15(5):321-334."
+ },
+ {
+  "y": 2014,
+  "c": "Kim YH*, Ramakrishna S, Kim H+, Kim JS+. Enrichment of cells with TALEN-induced mutations using surrogate reporters. Methods. 2014; 69:108-117."
+ },
+ {
+  "y": 2014,
+  "c": "Lee H, Lee JK, Park MH, Hong YR, Marti HH, Kim H, Okada Y, Otsu M, Seo EJ, Park JH, Bae JH, Okino N, He X, Schuchman EH, Bae JS, Jin HK. Pathological roles of the VEGF/SphK pathway in Niemann-Pick type C neurons. Nat Commun. 2014; 5:5514."
+ },
+ {
+  "y": 2014,
+  "c": "Lee JS, Park JR, Kwon OS, Kim H, Fornace AJ Jr, Cha HJ. Off-target response of a Wip1 chemical inhibitor in skin keratinocytes. J Dermatol Sci. 2014; 73(2):125-34."
+ },
+ {
+  "y": 2014,
+  "c": "Madhan Kumar A, Nagarajan S, Ramakrishna S, Sudhagar P, Kang YS, Kim H, Gasem ZM, Rajendran N. Electrochemical and in vitro bioactivity of polypyrrole/ceramic nanocomposite coatings on 316L SS bio-implants. Mater Sci Eng C Mater Biol Appl. 2014; 43:76-85."
+ },
+ {
+  "y": 2014,
+  "c": "Ramakrishna S*, Cho SW, Kim S, Song M, Gopalappa R, Kim JS+, Kim H+. Surrogate reporter-based enrichment of cells containing RNA-guided Cas9 nuclease-induced mutations. Nat. Commun. 2014; 5:3378."
+ },
+ {
+  "y": 2014,
+  "c": "Ramakrishna S*, Dad A-B, Beloor J, Gopalappa R, Lee S-K, Kim H+. Gene disruption by cell-penetrating peptide-mediated delivery of Cas9 protein and guide RNA. Genome Res. 2014; 24(6):1020-7."
+ },
+ {
+  "y": 2014,
+  "c": "Song M*, Kim YH, Kim JS, Kim H+. Genome engineering in human cells. Methods Enzymol. 2014; 546:93-118."
+ },
+ {
+  "y": 2014,
+  "c": "Sung PS, Murayama A, Kang W, Kim MS, Yoon SK, Fukasawa M, Kondoh M, Kim JS, Kim H, Kato T, Shin EC. Hepatitis C virus entry is impaired by claudin-1 downregulation in diacylglycerol acyltransferase-1-deficient cells. J Virol. 2014; 88(16):9233-44."
+ },
+ {
+  "y": 2013,
+  "c": "Kim H, Kim MS, Wee G, Lee CI, Kim H+, Kim JS. Magnetic separation and antibiotics selection enable enrichment of cells with ZFN/TALEN-induced mutations. PLoS One. 2013; 8(2):e56476."
+ },
+ {
+  "y": 2013,
+  "c": "Lee MY, Yu JH, Kim JY, Seo JH, Park ES, Kim CH, Kim H+, Cho SR. Alteration of synaptic activity-regulating genes underlying functional improvement by long-term exposure to an enriched environment in the adult brain. Neurorehabil Neural Repair. 2013; 27(6):561-74."
+ },
+ {
+  "y": 2013,
+  "c": "Ramakrishna S*, Kim YH, Kim H+. Stability of zinc finger nuclease protein is enhanced by a proteasome inhibitor MG132. PLoS One. 2013; 8(1):e54282."
+ },
+ {
+  "y": 2013,
+  "c": "Seo JW*, Kim H*, Park ES, Lee JE, Kim DW, Kim HO, Im SH, Yu JH, Kim JY, Lee MY, Kim CH, Cho SR. Environmental enrichment synergistically improves functional recovery by transplanted adipose stem cells in chronic hypoxic-ischemic brain injury. Cell Transplant. 2013; 22(9):1553-68."
+ },
+ {
+  "y": 2013,
+  "c": "Seo MS, Hwang KG, Lee JS, Kim H, Baek SH. The effect of mineral trioxide aggregate on odontogenic differentiation in dental pulp stem cells. J Endod. 2013; 39(2):242-8."
+ },
+ {
+  "y": 2012,
+  "c": "Kim DS*, Kim H*, Shim SH*, Kim C, Song M, Kim YH, Jung YW, Nam JH. Coxsackievirus B3 used as a gene therapy vector to express functional FGF2. Gene Ther. 2012; 19(12):1159-65."
+ },
+ {
+  "y": 2012,
+  "c": "Kim H*, Kim JJ, Yoon YS. Emerging therapy for diabetic neuropathy: Cell therapy targeting vessels and nerves. Endocr Metab Immune Disord Drug Targets. 2012; 12(2):168-78."
+ },
+ {
+  "y": 2012,
+  "c": "Lee MO, Song SH, Jung S, Hur S, Asahara T, Kim H, Kwon SM, Cha HJ. Effect of ionizing radiation induced damage of endothelial progenitor cells in vascular regeneration. Arterioscler Thromb Vasc Biol. 2012; 32(2):343-52."
+ },
+ {
+  "y": 2012,
+  "c": "Na HN*, Kim H*, Nam JH. Novel genes and cellular pathways related to infection with adenovirus-36 as an obesity agent in human mesenchymal stem cells. Int J Obes (Lond). 2012; 36(2):195-200."
+ },
+ {
+  "y": 2012,
+  "c": "Seo MS, Hwang KG, Kim H, Baek SH. Analysis of gene expression during odontogenic differentiation of cultured human dental pulp cells. Restor Dent Endod. 2012; 37(3):142-8."
+ },
+ {
+  "y": 2012,
+  "c": "Yu KR, Yang SR, Jung JW, Kim H, Ko K, Han DW, Park SB, Choi SW, Kang SK, Scholer H, Kang KS. CD49f enhances multipotency and maintains stemness through the direct regulation of OCT4 and SOX2. Stem Cells. 2012; 30(5):876-87."
+ },
+ {
+  "y": 2011,
+  "c": "Kim H, Um E, Cho SR, Jung C, Kim H+, Kim JS+. Surrogate reporters for enrichment of cells with nuclease-induced mutations. Nat. Methods. 2011; 8:941-3."
+ }
+]

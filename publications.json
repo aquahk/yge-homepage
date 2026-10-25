@@ -1,22 +1,393 @@
 [
-  { "y": 2026, "t": "A comprehensive functional atlas of ALK kinase-domain variants reveals the resistance landscape to ALK inhibitors", "au": "Oh HC et al.", "j": "Genome Biology", "doi": "10.1186/s13059-026-03977-4" },
-  { "y": 2026, "t": "High-resolution functional mapping of androgen receptor variants", "au": "Oh HC et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-026-01647-1" },
-  { "y": 2025, "t": "Functional assessment of all ATM single-nucleotide variants using prime editing and deep learning", "au": "Lee KS et al.", "j": "Cell", "doi": "10.1016/j.cell.2025.05.046" },
-  { "y": 2025, "t": "Comprehensive resistance profiling of CML-associated ABL1 variants against five tyrosine-kinase inhibitors using prime editing", "au": "Jung Y et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-025-01531-4" },
-  { "y": 2025, "t": "High-throughput evaluation of in vitro CRISPR activities enables optimized large-scale multiplex enrichment of rare variants", "au": "Yeo JH et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-025-01535-0" },
-  { "y": 2024, "t": "Saturation profiling of drug-resistant genetic variants using prime editing", "au": "Kim Y et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-024-02465-z" },
-  { "y": 2024, "t": "SynDesign: web-based prime-editing guide-RNA design and evaluation for saturation genome editing", "au": "Park J et al.", "j": "Nucleic Acids Res.", "doi": "10.1093/nar/gkae304" },
-  { "y": 2024, "t": "In vivo adenine base editing rescues adrenoleukodystrophy in a humanized mouse model", "au": "Gopalappa R et al.", "j": "Mol. Ther.", "doi": "10.1016/j.ymthe.2024.05.027" },
-  { "y": 2023, "t": "Prediction of efficiencies for diverse prime-editing systems in multiple cell types", "au": "Yu G et al.", "j": "Cell", "doi": "10.1016/j.cell.2023.03.034" },
-  { "y": 2023, "t": "Deep-learning models to predict the editing efficiencies and outcomes of diverse base editors", "au": "Kim N et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-023-01792-x" },
-  { "y": 2023, "t": "Sniper2L is a high-fidelity Cas9 variant with high activity", "au": "Kim YH et al.", "j": "Nat. Chem. Biol.", "doi": "10.1038/s41589-023-01279-5" },
-  { "y": 2023, "t": "Massively parallel evaluation and computational prediction of the activities and specificities of 17 small Cas9s", "au": "Seo SY et al.", "j": "Nat. Methods", "doi": "10.1038/s41592-023-01875-2" },
-  { "y": 2022, "t": "High-throughput functional evaluation of human cancer-associated mutations using base editors", "au": "Kim Y et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-022-01276-4" },
-  { "y": 2021, "t": "Application of prime editing to the correction of mutations and phenotypes in adult mice with liver and eye diseases", "au": "Jang H et al.", "j": "Nat. Biomed. Eng.", "doi": "10.1038/s41551-021-00788-9" },
-  { "y": 2021, "t": "Generation of a more efficient prime editor 2 by addition of the Rad51 DNA-binding domain", "au": "Song M et al.", "j": "Nat. Commun.", "doi": "10.1038/s41467-021-25928-2" },
-  { "y": 2021, "t": "Recording of elapsed time and temporal information about biological events using Cas9", "au": "Park J et al.", "j": "Cell", "doi": "10.1016/j.cell.2021.01.014" },
-  { "y": 2020, "t": "Predicting the efficiency of prime-editing guide RNAs in human cells", "au": "Kim HK et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-020-0677-y" },
-  { "y": 2020, "t": "Sequence-specific prediction of the efficiencies of adenine and cytosine base editors", "au": "Song M et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/s41587-020-0573-5" },
-  { "y": 2019, "t": "SpCas9 activity prediction by DeepSpCas9, a deep-learning model with high generalization performance", "au": "Kim HK et al.", "j": "Sci. Adv.", "doi": "10.1126/sciadv.aax9249" },
-  { "y": 2018, "t": "Deep learning improves prediction of CRISPR-Cpf1 guide-RNA activity", "au": "Kim HK et al.", "j": "Nat. Biotechnol.", "doi": "10.1038/nbt.4061" }
+ {
+  "y": 2026,
+  "t": "A comprehensive functional atlas of ALK kinase-domain variants reveals the resistance landscape to ALK inhibitors",
+  "j": "Genome Biology",
+  "doi": "10.1186/s13059-026-03977-4",
+  "au": "[Oh H-C]*, [Kim HH]+"
+ },
+ {
+  "y": 2026,
+  "t": "High-resolution functional mapping of androgen receptor variants",
+  "j": "Nature Biomedical Engineering",
+  "doi": "10.1038/s41551-026-01647-1",
+  "au": "[Oh H-C]*, [Chang Y], [Park J], [Cheong Y], [Lee KS], Han H, [Kim HH]+"
+ },
+ {
+  "y": 2026,
+  "t": "A non-viral path to efficient and safe prime editing in vivo",
+  "j": "Nature Nanotechnology",
+  "doi": "10.1038/s41565-026-02205-1",
+  "au": "[Han Y], [Kim HH]+",
+  "nv": 1
+ },
+ {
+  "y": 2026,
+  "t": "Evaluation and prediction of guide RNA activities in genome-editing tools",
+  "j": "Nature Reviews Bioengineering",
+  "v": "4",
+  "i": "1",
+  "p": "82-97",
+  "doi": "10.1038/s44222-025-00352-z",
+  "au": "Kim HK*, [Kim HH]+"
+ },
+ {
+  "y": 2025,
+  "t": "Functional assessment of all ATM single-nucleotide variants using prime editing and deep learning",
+  "j": "Cell",
+  "v": "188",
+  "i": "18",
+  "p": "5081-5099.e27",
+  "doi": "10.1016/j.cell.2025.05.046",
+  "au": "[Lee KS]*, [Min J-G]*, [Cheong Y], [Oh HC], Jung SY, Park JI, [Song M], Seo JH, Cho SR, [Kim HH]+"
+ },
+ {
+  "y": 2025,
+  "t": "Engineered virus-like particle-assembled Vegfa-targeting Cas9 ribonucleoprotein treatment alleviates neovascularization in wet age-related macular degeneration",
+  "j": "Genome Biology",
+  "doi": "10.1186/s13059-025-03774-5",
+  "au": "Wu J*, [Jang H]*, [Kwak H], [Son M], Jiang W, Hwang H-Y, Jo DH, Kim D, [Kim HH]+, Kim JH+",
+  "v": "26",
+  "i": "1",
+  "p": "346"
+ },
+ {
+  "y": 2025,
+  "t": "Engineered virus-like particles for in vivo gene editing ameliorate hearing loss in murine DFNA2 model",
+  "j": "Molecular Therapy",
+  "v": "33",
+  "i": "12",
+  "p": "6449-6462",
+  "doi": "10.1016/j.ymthe.2025.08.049",
+  "au": "Noh B*, [Gopalappa R]*, Lin H, Gee HY, Choi JY, [Kim HH]+, Jung J+"
+ },
+ {
+  "y": 2025,
+  "t": "Intravitreal adenine base editing of RS1 improves vision in a preclinical mouse model of retinoschisis",
+  "j": "Molecular Therapy",
+  "v": "33",
+  "i": "8",
+  "p": "3955-3967",
+  "doi": "10.1016/j.ymthe.2025.04.021",
+  "au": "Jo DH*, [Jang H]*, Cho CS, Lee SJ, Heo JH, [Kim JA], [Kim SJ], Ryu W, Park C-W, Kang B-C, Gee HY, Sung YH+, [Kim HH]+, Kim JH+"
+ },
+ {
+  "y": 2025,
+  "t": "Comprehensive resistance profiling of CML-associated ABL1 variants against five tyrosine-kinase inhibitors using prime editing",
+  "j": "Nature Biomedical Engineering",
+  "v": "10",
+  "i": "7",
+  "p": "1392-1409",
+  "doi": "10.1038/s41551-025-01531-4",
+  "au": "[Jung Y]*, [Yu G]*, [Oh H-C], Lee J-H, Jeon E, Bae J, Sim T, [Kim HH]+"
+ },
+ {
+  "y": 2025,
+  "t": "High-throughput evaluation of in vitro CRISPR activities enables optimized large-scale multiplex enrichment of rare variants",
+  "j": "Nature Biomedical Engineering",
+  "v": "10",
+  "i": "7",
+  "p": "1410-1430",
+  "doi": "10.1038/s41551-025-01535-0",
+  "au": "[Yeo JH]*, [Lee S], [Kim S], [Min JG], [Gopalappa R], [Oh HC], [Kim HK], Nam EJ, [Kim HH]+"
+ },
+ {
+  "y": 2025,
+  "t": "Saturation profiling of drug-resistant genetic variants using prime editing",
+  "j": "Nature Biotechnology",
+  "v": "43",
+  "i": "9",
+  "p": "1471-1484",
+  "doi": "10.1038/s41587-024-02465-z",
+  "au": "[Kim Y]*, [Oh HC]*, [Lee S]*, [Kim HH]+"
+ },
+ {
+  "y": 2025,
+  "t": "A rational engineering strategy for structural dynamics modulation enables target specificity enhancement of the Cas9 nuclease",
+  "j": "Nucleic Acids Research",
+  "v": "53",
+  "i": "12",
+  "p": "gkaf535",
+  "doi": "10.1093/nar/gkaf535",
+  "au": "Sung K*, Jung Y*, [Kim N]*, Kim Y-W, [Kim HH]+, Kim SK+, Bae S+"
+ },
+ {
+  "y": 2024,
+  "t": "In vivo adenine base editing rescues adrenoleukodystrophy in a humanized mouse model",
+  "j": "Molecular Therapy",
+  "v": "32",
+  "i": "7",
+  "p": "2190-2206",
+  "doi": "10.1016/j.ymthe.2024.05.027",
+  "au": "[Gopalappa R]*, [Lee M], Kim G, Jung ES, [Lee H], Hwang H-Y, Lee JG, Kim SJ, Yoo HJ, Sung YH, Kim D, Baek I-J+, [Kim HH]+"
+ },
+ {
+  "y": 2024,
+  "t": "Deep-learning models to predict the editing efficiencies and outcomes of diverse base editors",
+  "j": "Nature Biotechnology",
+  "v": "42",
+  "i": "3",
+  "p": "484-497",
+  "doi": "10.1038/s41587-023-01792-x",
+  "au": "[Kim N]*, Choi S*, [Kim S], [Song M], Seo JH, Min S, [Park J], Cho S-R, [Kim HH]+"
+ },
+ {
+  "y": 2024,
+  "t": "SynDesign: web-based prime editing guide RNA design and evaluation tool for saturation genome editing",
+  "j": "Nucleic Acids Research",
+  "v": "52",
+  "i": "W1",
+  "p": "W121-W125",
+  "doi": "10.1093/nar/gkae304",
+  "au": "[Park J]*, [Yu G], [Seo S-Y], [Yang J], [Kim HH]+"
+ },
+ {
+  "y": 2023,
+  "t": "Prediction of efficiencies for diverse prime editing systems in multiple cell types",
+  "j": "Cell",
+  "v": "186",
+  "i": "10",
+  "p": "2256-2272.e23",
+  "doi": "10.1016/j.cell.2023.03.034",
+  "au": "[Yu G]*, [Kim HK]*, [Park J], [Kwak H], [Cheong Y], [Kim D], Kim J, Kim J, [Kim HH]+"
+ },
+ {
+  "y": 2023,
+  "t": "Sniper2L is a high-fidelity Cas9 variant with high activity",
+  "j": "Nature Chemical Biology",
+  "v": "19",
+  "i": "8",
+  "p": "972-980",
+  "doi": "10.1038/s41589-023-01279-5",
+  "au": "[Kim YH]*, [Kim N]*, Okafor I*, Choi S, Min S, Lee J, Bae SM, Choi K, Choi J, Harihar V, [Kim Y], Kim JS, Kleinstiver BP, Lee JK, Ha T, [Kim HH]+"
+ },
+ {
+  "y": 2023,
+  "t": "Massively parallel evaluation and computational prediction of the activities and specificities of 17 small Cas9s",
+  "j": "Nature Methods",
+  "v": "20",
+  "i": "7",
+  "p": "999-1009",
+  "doi": "10.1038/s41592-023-01875-2",
+  "au": "[Seo S-Y]*, Min S, [Lee S], Seo JH, [Park J], [Kim HK], [Song M], Baek D, Cho S-R, [Kim HH]+"
+ },
+ {
+  "y": 2022,
+  "t": "Application of prime editing to the correction of mutations and phenotypes in adult mice with liver and eye diseases",
+  "j": "Nature Biomedical Engineering",
+  "v": "6",
+  "i": "2",
+  "p": "181-194",
+  "doi": "10.1038/s41551-021-00788-9",
+  "au": "[Jang H]*, Jo DH*, Cho CS, [Shin JH], Seo JH, [Yu G], [Gopalappa R], [Kim D], Cho S-R, Kim JH+, [Kim HH]+"
+ },
+ {
+  "y": 2022,
+  "t": "High-throughput functional evaluation of human cancer-associated mutations using base editors",
+  "j": "Nature Biotechnology",
+  "v": "40",
+  "i": "6",
+  "p": "874-884",
+  "doi": "10.1038/s41587-022-01276-4",
+  "au": "[Kim Y]*, [Lee S]*, Cho S, [Park J], Chae D, Park T, Minna JD, [Kim HH]+"
+ },
+ {
+  "y": 2022,
+  "t": "In vivo outer hair cell gene editing ameliorates progressive hearing loss in dominant-negative Kcnq4 murine model",
+  "j": "Theranostics",
+  "v": "12",
+  "i": "5",
+  "p": "2465-2482",
+  "doi": "10.7150/thno.67781",
+  "au": "Noh B*, Rim JH*, [Gopalappa R]*, Lin H, Kim KM, Kang MJ, Gee HY+, Choi JY+, [Kim HH]+, Jung J+"
+ },
+ {
+  "y": 2021,
+  "t": "Recording of elapsed time and temporal information about biological events using Cas9",
+  "j": "Cell",
+  "v": "184",
+  "i": "4",
+  "p": "1047-1063.e23",
+  "doi": "10.1016/j.cell.2021.01.014",
+  "au": "[Park J]*, [Lim JM], Jung I, Heo SJ, [Park J], [Chang Y], [Kim HK], Jung D, Yu JH, Min S, Yoon S, Cho S-R, Park T, [Kim HH]+"
+ },
+ {
+  "y": 2021,
+  "t": "Improving CRISPR tools by elucidating DNA repair",
+  "j": "Nature Biotechnology",
+  "v": "39",
+  "i": "12",
+  "p": "1512-1514",
+  "doi": "10.1038/s41587-021-01149-2",
+  "au": "[Lim JM]*, [Kim HH]+",
+  "nv": 1
+ },
+ {
+  "y": 2021,
+  "t": "Predicting the efficiency of prime editing guide RNAs in human cells",
+  "j": "Nature Biotechnology",
+  "v": "39",
+  "i": "2",
+  "p": "198-206",
+  "doi": "10.1038/s41587-020-0677-y",
+  "au": "[Kim HK]*, [Yu G]*, [Park J], Min S, [Lee S], Yoon S, [Kim HH]+"
+ },
+ {
+  "y": 2021,
+  "t": "Generation of a more efficient prime editor 2 by addition of the Rad51 DNA-binding domain",
+  "j": "Nature Communications",
+  "v": "12",
+  "i": "1",
+  "p": "5617",
+  "doi": "10.1038/s41467-021-25928-2",
+  "au": "[Song M]*, [Lim JM]*, Min S, Oh JS, [Kim DY], Woo JS, Nishimasu H, Cho S-R, Yoon S, [Kim HH]+"
+ },
+ {
+  "y": 2020,
+  "t": "High-throughput analysis of the activities of xCas9, SpCas9-NG and SpCas9 at matched and mismatched target sequences in human cells",
+  "j": "Nature Biomedical Engineering",
+  "v": "4",
+  "i": "1",
+  "p": "111-124",
+  "doi": "10.1038/s41551-019-0505-1",
+  "au": "[Kim HK]*, [Lee S], [Kim Y], [Park J], Min S, [Choi JW], Huang TP, Yoon S, Liu DR, [Kim HH]+"
+ },
+ {
+  "y": 2020,
+  "t": "Sequence-specific prediction of the efficiencies of adenine and cytosine base editors",
+  "j": "Nature Biotechnology",
+  "v": "38",
+  "i": "9",
+  "p": "1037-1043",
+  "doi": "10.1038/s41587-020-0573-5",
+  "au": "[Song M]*, [Kim HK]*, [Lee S]*, [Kim YG], [Seo SY], Park JM, [Choi JW], [Jang HW], [Shin JH], Min SW, Quan Z, Kim JH, Kang HC, Yoon S, [Kim HH]+"
+ },
+ {
+  "y": 2020,
+  "t": "Prediction of the sequence-specific cleavage activity of Cas9 variants",
+  "j": "Nature Biotechnology",
+  "v": "38",
+  "i": "11",
+  "p": "1328-1336",
+  "doi": "10.1038/s41587-020-0537-9",
+  "au": "[Kim N]*, [Kim HK]*, [Lee S], Seo JH, [Choi JW], [Park J], Min SW, Yoon S, Cho SR, [Kim HH]+"
+ },
+ {
+  "y": 2019,
+  "t": "En bloc and segmental deletions of human XIST reveal X chromosome inactivation-involving RNA elements",
+  "j": "Nucleic Acids Research",
+  "v": "47",
+  "i": "8",
+  "p": "3875-3887",
+  "doi": "10.1093/nar/gkz109",
+  "au": "Lee HJ*, [Gopalappa R]*, Sunwoo H*, Choi S-W, Ramakrishna S, Lee JT, [Kim HH]+, Nam J-W+"
+ },
+ {
+  "y": 2019,
+  "t": "SpCas9 activity prediction by DeepSpCas9, a deep learning-based model with high generalization performance",
+  "j": "Science Advances",
+  "v": "5",
+  "i": "11",
+  "p": "eaax9249",
+  "doi": "10.1126/sciadv.aax9249",
+  "au": "[Kim HK]*, [Kim Y], [Lee S], Min S, Bae JY, [Choi JW], [Park J], Jung D, Yoon S, [Kim HH]+"
+ },
+ {
+  "y": 2018,
+  "t": "Targeting mutant KRAS with CRISPR-Cas9 controls tumor growth",
+  "j": "Genome Research",
+  "v": "28",
+  "i": "3",
+  "p": "374-382",
+  "doi": "10.1101/gr.223891.117",
+  "au": "[Kim W]*, [Lee S], Kim HS, [Song M], Cha YH, [Kim YH], [Shin J], Lee ES, Joo Y, Song JJ, Choi EJ, [Choi JW], Lee J, Kang M, Yook JI, Lee MG, Kim YS, Paik S, [Kim HH]+"
+ },
+ {
+  "y": 2018,
+  "t": "Deep learning improves prediction of CRISPR-Cpf1 guide RNA activity",
+  "j": "Nature Biotechnology",
+  "v": "36",
+  "i": "3",
+  "p": "239-241",
+  "doi": "10.1038/nbt.4061",
+  "au": "[Kim HK]*, Min S, [Song M], [Jung S], [Choi JW], [Kim Y], [Lee S], Yoon S+, [Kim HH]+"
+ },
+ {
+  "y": 2018,
+  "t": "Paired D10A Cas9 nickases are sometimes more efficient than individual nucleases for gene disruption",
+  "j": "Nucleic Acids Research",
+  "v": "46",
+  "i": "12",
+  "p": "e71",
+  "doi": "10.1093/nar/gky222",
+  "au": "[Gopalappa R]*, [Suresh B], [Ramakrishna S]+, [Kim HH]+"
+ },
+ {
+  "y": 2017,
+  "t": "Somatic mutations in TSC1 and TSC2 cause focal cortical dysplasia",
+  "j": "American Journal of Human Genetics",
+  "v": "100",
+  "i": "3",
+  "p": "454-472",
+  "doi": "10.1016/j.ajhg.2017.01.030",
+  "au": "Lim JS, [Gopalappa R], Kim SH, [Ramakrishna S], Lee M, [Kim W], Kim J, Park SM, Lee J, Oh JH, Kim HD, Park CH, Lee JS, Kim S, Kim SD, Han JM, Kang HC+, [Kim HH]+, Lee JH+"
+ },
+ {
+  "y": 2017,
+  "t": "In vivo high-throughput profiling of CRISPR-Cpf1 activity",
+  "j": "Nature Methods",
+  "v": "14",
+  "i": "2",
+  "p": "153-159",
+  "doi": "10.1038/nmeth.4104",
+  "au": "[Kim HK]*, [Song M]*, Lee J, Menon AV, [Jung S], Kang YM, [Choi JW], Woo E, Koh HC, Nam JW, [Kim H]+"
+ },
+ {
+  "y": 2015,
+  "t": "Rh D blood group conversion using transcription activator-like effector nucleases",
+  "j": "Nature Communications",
+  "v": "6",
+  "p": "7451",
+  "doi": "10.1038/ncomms8451",
+  "au": "[Kim YH]*, Kim HO, Baek EJ, Kurita R, Cha HJ, Nakamura Y, [Kim H]+"
+ },
+ {
+  "y": 2014,
+  "t": "Gene disruption by cell-penetrating peptide-mediated delivery of Cas9 protein and guide RNA",
+  "j": "Genome Research",
+  "v": "24",
+  "i": "6",
+  "p": "1020-1027",
+  "doi": "10.1101/gr.171264.113",
+  "au": "[Ramakrishna S]*, Dad A-BD, Beloor J, [Gopalappa R], Lee S-K, [Kim H]+"
+ },
+ {
+  "y": 2014,
+  "t": "Surrogate reporter-based enrichment of cells containing RNA-guided Cas9 nuclease-induced mutations",
+  "j": "Nature Communications",
+  "v": "5",
+  "p": "3378",
+  "doi": "10.1038/ncomms4378",
+  "au": "[Ramakrishna S]*, Cho SW, Kim S, [Song M], [Gopalappa R], Kim JS+, [Kim H]+"
+ },
+ {
+  "y": 2014,
+  "t": "A guide to genome engineering with programmable nucleases",
+  "j": "Nature Reviews Genetics",
+  "v": "15",
+  "i": "5",
+  "p": "321-334",
+  "doi": "10.1038/nrg3686",
+  "au": "[Kim H]*, Kim JS"
+ },
+ {
+  "y": 2011,
+  "t": "Surrogate reporters for enrichment of cells with nuclease-induced mutations",
+  "j": "Nature Methods",
+  "v": "8",
+  "i": "11",
+  "p": "941-943",
+  "doi": "10.1038/nmeth.1733",
+  "au": "Kim H, Um E, Cho SR, Jung C, [Kim H]+, Kim JS+"
+ }
 ]
