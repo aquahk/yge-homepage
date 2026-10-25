@@ -397,11 +397,16 @@
     a.innerHTML='<span class="name">'+t.n+' <span class="arrow">↗</span></span><span class="cat">'+t.c+'</span><span class="desc">'+esc(t.d)+'</span>';
     g.appendChild(a);});
 
+  // bilingual field: uses <base>_en / <base>_ko when present (toggled by the lang switch),
+  // falling back to a single <base> value shown in both languages.
+  function bi(n,b){var en=n[b+'_en'],ko=n[b+'_ko'],one=n[b];
+    if(en||ko){en=en||ko;ko=ko||en;return en===ko?esc(en):'<span class="en">'+esc(en)+'</span><span class="ko">'+esc(ko)+'</span>';}
+    return one!=null?esc(one):'';}
   fetch('news.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
     list.sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
     var el=document.getElementById('newsList'),h='';
-    list.forEach(function(n){var k=(n.kind||'news').toLowerCase();
-      h+='<div class="item"><div class="when">'+esc(n.date)+'</div><div class="body"><div class="h"><span class="badge '+esc(k)+'">'+esc(k)+'</span>'+esc(n.title)+'</div>'+(n.detail?'<div class="d">'+esc(n.detail)+'</div>':'')+'</div></div>';});
+    list.forEach(function(n){var k=(n.kind||'news').toLowerCase();var d=bi(n,'detail');
+      h+='<div class="item"><div class="when">'+esc(n.date)+'</div><div class="body"><div class="h"><span class="badge '+esc(k)+'">'+esc(k)+'</span>'+bi(n,'title')+'</div>'+(d?'<div class="d">'+d+'</div>':'')+'</div></div>';});
     el.innerHTML=h||'<div class="loading">No news yet.</div>';
   }).catch(function(){document.getElementById('newsList').innerHTML='<div class="loading">News will appear here.</div>';});
 
