@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,58 +10,55 @@
   body{margin:0}
   img{max-width:100%;height:auto}
   [hidden]{display:none!important}
-  /* Layout: editorial single-column lab site — sticky nav; hairline-ruled sections;
-     News & Publications load live from JSON (the Slack bot / ORCID keep them current).
-     Fraunces display over a cool clinical palette; IBM Plex Sans body; IBM Plex Mono for data. */
+  /* Layout: text-first academic site (format after narrykim.org) — sticky bilingual nav,
+     numbered research areas, team shown as a single group photo, News & Publications from JSON.
+     Fraunces display + IBM Plex Sans/Mono; cool clinical palette, light/dark. */
   :root{
-    --bg:#fbfbfd; --surface:#f3f4f8; --surface-2:#eceef4; --fg:#14161e; --muted:#5a5f71;
-    --line:#e1e3ec; --accent:#0b7d73; --accent-ink:#086258; --accent-soft:rgba(11,125,115,.10);
-    --award:#b7791f; --base-a:#2f8f4e; --base-t:#c0392b; --base-g:#1f6feb; --base-c:#b7791f;
-    --shadow:0 1px 2px rgba(20,22,30,.04),0 8px 24px rgba(20,22,30,.06); --maxw:1080px;
+    --bg:#fbfbfd;--surface:#f3f4f8;--surface-2:#eceef4;--fg:#14161e;--muted:#5a5f71;
+    --line:#e1e3ec;--accent:#0b7d73;--accent-ink:#086258;--accent-soft:rgba(11,125,115,.10);
+    --award:#b7791f;--base-a:#2f8f4e;--base-t:#c0392b;--base-g:#1f6feb;--base-c:#b7791f;--maxw:1060px;
     --f-display:"Fraunces",Georgia,"Times New Roman",serif;
-    --f-body:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --f-body:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --bg:#0b0d14;--surface:#141722;--surface-2:#1b1f2d;--fg:#eceef6;--muted:#99a0b4;--line:#262b3b;
     --accent:#2dd4bf;--accent-ink:#5eead4;--accent-soft:rgba(45,212,191,.12);--award:#e0a44a;
-    --base-a:#4ade80;--base-t:#f87171;--base-g:#60a5fa;--base-c:#fbbf24;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.4);color-scheme:dark;}}
+    --base-a:#4ade80;--base-t:#f87171;--base-g:#60a5fa;--base-c:#fbbf24;color-scheme:dark;}}
   :root[data-theme="dark"]{
     --bg:#0b0d14;--surface:#141722;--surface-2:#1b1f2d;--fg:#eceef6;--muted:#99a0b4;--line:#262b3b;
     --accent:#2dd4bf;--accent-ink:#5eead4;--accent-soft:rgba(45,212,191,.12);--award:#e0a44a;
-    --base-a:#4ade80;--base-t:#f87171;--base-g:#60a5fa;--base-c:#fbbf24;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.4);color-scheme:dark;}
+    --base-a:#4ade80;--base-t:#f87171;--base-g:#60a5fa;--base-c:#fbbf24;color-scheme:dark;}
   *{box-sizing:border-box}
-  body{background:var(--bg);color:var(--fg);font-family:var(--f-body);line-height:1.6;
-    -webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+  body{background:var(--bg);color:var(--fg);font-family:var(--f-body);line-height:1.65;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
   body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:50}
-  .wrap{max-width:var(--maxw);margin:0 auto;
-    padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-  a{color:var(--accent-ink);text-decoration:none}
-  a:hover{text-decoration:underline;text-underline-offset:3px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  a{color:var(--accent-ink);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
 
-  header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
-    background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(140%) blur(10px);
-    border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;gap:20px;min-height:60px}
-  .brand{font-family:var(--f-mono);font-weight:600;font-size:.92rem;letter-spacing:.02em;display:flex;align-items:center;gap:9px;color:var(--fg)}
+  /* language toggle */
+  html[data-lang="en"] .ko{display:none}
+  html[data-lang="ko"] .en{display:none}
+
+  header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:18px;min-height:60px}
+  .brand{font-family:var(--f-mono);font-weight:600;font-size:.9rem;letter-spacing:.02em;display:flex;align-items:center;gap:9px;color:var(--fg);min-width:0;white-space:nowrap}
   .brand:hover{text-decoration:none}
   .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
   .nav .spacer{flex:1}
-  .nav .links{display:flex;gap:20px}
+  .nav .links{display:flex;gap:18px}
   .nav .links a{color:var(--muted);font-size:.9rem;font-weight:500}
   .nav .links a:hover{color:var(--fg);text-decoration:none}
-  .theme-btn{font:inherit;font-size:.8rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
-  .theme-btn:hover{color:var(--fg);border-color:var(--accent)}
-  @media (max-width:820px){.nav .links{display:none}}
+  .nbtn{font:inherit;font-size:.8rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+  .nbtn:hover{color:var(--fg);border-color:var(--accent)}
+  @media (max-width:860px){.nav .links{display:none}}
+  @media (max-width:560px){.brand .btail{display:none}}
 
-  .hero{padding-block:clamp(48px,8vw,96px) clamp(36px,5vw,60px)}
+  .hero{padding-block:clamp(48px,8vw,92px) clamp(32px,5vw,52px)}
   .eyebrow{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 20px}
-  h1.title{font-family:var(--f-display);font-optical-sizing:auto;font-weight:560;font-size:clamp(2.5rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:15ch}
+  h1.title{font-family:var(--f-display);font-optical-sizing:auto;font-weight:560;font-size:clamp(2.3rem,6.2vw,4.2rem);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:18ch}
   h1.title em{font-style:italic;color:var(--accent-ink);font-weight:460}
-  .lede{font-size:clamp(1.06rem,2.1vw,1.3rem);color:var(--muted);max-width:60ch;margin:24px 0 0;line-height:1.55}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .lede{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted);max-width:62ch;margin:24px 0 0;line-height:1.6}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
   .btn{font:inherit;font-weight:500;font-size:.95rem;padding:11px 20px;border-radius:10px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
   .btn.primary{background:var(--accent);color:#fff}
   :root[data-theme="dark"] .btn.primary{color:#06201d}
@@ -69,38 +66,39 @@
   .btn.primary:hover{background:var(--accent-ink);text-decoration:none}
   .btn.ghost{background:transparent;border-color:var(--line);color:var(--fg)}
   .btn.ghost:hover{border-color:var(--accent);text-decoration:none}
-  .seq{font-family:var(--f-mono);font-size:clamp(.78rem,2.4vw,1.02rem);letter-spacing:.22em;margin-top:46px;padding-top:22px;border-top:1px solid var(--line);overflow-x:auto;white-space:nowrap;color:var(--muted)}
+  .seq{font-family:var(--f-mono);font-size:clamp(.76rem,2.3vw,1rem);letter-spacing:.22em;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);overflow-x:auto;white-space:nowrap;color:var(--muted)}
   .seq b{font-weight:600}
   .seq .A{color:var(--base-a)}.seq .T{color:var(--base-t)}.seq .G{color:var(--base-g)}.seq .C{color:var(--base-c)}
   .seq .edit{background:var(--accent-soft);color:var(--accent-ink);border-radius:3px;padding:1px 2px}
-  .seq .cap{display:block;letter-spacing:.08em;font-size:.72rem;margin-top:10px;color:var(--muted)}
+  .seq .cap{display:block;letter-spacing:.08em;font-size:.72rem;margin-top:10px;color:var(--muted);white-space:normal}
 
-  section{padding-block:clamp(44px,6vw,76px);border-top:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+  section{padding-block:clamp(44px,6vw,72px);border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px;flex-wrap:wrap}
   .sec-num{font-family:var(--f-mono);font-size:.78rem;color:var(--accent-ink);letter-spacing:.1em}
-  h2{font-family:var(--f-display);font-optical-sizing:auto;font-weight:540;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.015em;margin:0;text-wrap:balance}
-  .sec-sub{color:var(--muted);max-width:62ch;margin:14px 0 0;font-size:1.02rem}
+  h2{font-family:var(--f-display);font-optical-sizing:auto;font-weight:540;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.015em;margin:0;text-wrap:balance}
+  .sec-sub{color:var(--muted);max-width:64ch;margin:14px 0 0;font-size:1.02rem}
 
-  .themes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  @media (max-width:680px){.themes{grid-template-columns:1fr}}
-  .theme{background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:10px}
-  .theme .k{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;color:var(--accent-ink);text-transform:uppercase}
-  .theme h3{font-family:var(--f-display);font-weight:520;font-size:1.32rem;margin:0;letter-spacing:-.01em}
-  .theme p{margin:0;color:var(--muted);font-size:.97rem}
+  /* numbered research areas (narrykim-style) */
+  .areas{display:flex;flex-direction:column}
+  .area{display:grid;grid-template-columns:72px 1fr;gap:4px 22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .area:first-child{border-top:1px solid var(--line)}
+  .area .no{font-family:var(--f-display);font-size:2rem;font-weight:500;color:var(--accent-ink);line-height:1;grid-row:span 2}
+  .area h3{font-family:var(--f-display);font-weight:520;font-size:1.3rem;margin:0;letter-spacing:-.01em}
+  .area p{margin:6px 0 0;color:var(--muted);font-size:.98rem;max-width:64ch}
+  @media (max-width:560px){.area{grid-template-columns:1fr;gap:6px}.area .no{grid-row:auto;font-size:1.4rem}}
 
-  .tool-intro{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:26px;font-size:.97rem;color:var(--muted)}
+  .tool-intro{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:24px;font-size:.97rem;color:var(--muted)}
   .tool-intro .pill{font-family:var(--f-mono);font-size:.8rem;color:var(--accent-ink);background:var(--accent-soft);padding:3px 10px;border-radius:999px}
   .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media (max-width:860px){.tools{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:540px){.tools{grid-template-columns:1fr}}
-  .tool{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px;display:flex;flex-direction:column;gap:7px;min-width:0;transition:border-color .15s,transform .15s}
+  .tool{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:17px;display:flex;flex-direction:column;gap:6px;min-width:0;transition:border-color .15s,transform .15s}
   .tool:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-  .tool .name{font-family:var(--f-mono);font-weight:600;font-size:.98rem;color:var(--fg);display:flex;align-items:center;gap:7px}
+  .tool .name{font-family:var(--f-mono);font-weight:600;font-size:.96rem;color:var(--fg);display:flex;align-items:center;gap:7px}
   .tool .name .arrow{color:var(--accent-ink);font-size:.85rem}
   .tool .cat{font-size:.72rem;font-family:var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink)}
-  .tool .desc{font-size:.86rem;color:var(--muted);line-height:1.5}
+  .tool .desc{font-size:.85rem;color:var(--muted);line-height:1.5}
 
-  /* news */
   .news{display:flex;flex-direction:column}
   .item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .when{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);white-space:nowrap;min-width:58px;padding-top:3px}
@@ -111,42 +109,30 @@
   .item .d{color:var(--muted);font-size:.9rem;margin-top:2px}
   .loading{color:var(--muted);font-size:.92rem;padding:16px 0}
 
-  /* publications */
   .pub-year{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.1em;color:var(--accent-ink);padding:22px 0 10px;border-bottom:1px solid var(--line)}
   .pub{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
-  .pub .t{font-size:1.03rem;font-weight:500;line-height:1.4;min-width:0}
+  .pub .t{font-size:1.02rem;font-weight:500;line-height:1.4;min-width:0}
   .pub .t a{color:var(--fg)}.pub .t a:hover{color:var(--accent-ink)}
   .pub .au{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:3px}
   .pub .j{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);white-space:nowrap;text-align:right}
   .pub .j b{color:var(--accent-ink);font-weight:600}
   @media (max-width:620px){.pub{grid-template-columns:1fr;gap:4px}.pub .j{text-align:left}}
-  .pub-more{margin-top:24px;font-size:.95rem;color:var(--muted)}
+  .pub-more{margin-top:22px;font-size:.95rem;color:var(--muted)}
 
-  /* people */
-  .pi{display:grid;grid-template-columns:112px 1fr;gap:26px;align-items:start;margin-bottom:38px}
-  @media (max-width:560px){.pi{grid-template-columns:1fr;gap:16px}}
-  .pi .avatar{width:112px;height:112px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:2.4rem;color:var(--accent-ink);font-weight:500}
-  .pi h3{font-family:var(--f-display);font-weight:540;font-size:1.5rem;margin:0 0 2px}
+  /* people = PI + single group photo */
+  .pi{display:grid;grid-template-columns:104px 1fr;gap:24px;align-items:start;margin-bottom:34px}
+  @media (max-width:560px){.pi{grid-template-columns:1fr;gap:14px}}
+  .pi .avatar{width:104px;height:104px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:2.2rem;color:var(--accent-ink);font-weight:500}
+  .pi h3{font-family:var(--f-display);font-weight:540;font-size:1.45rem;margin:0 0 2px}
   .pi .role{font-family:var(--f-mono);font-size:.82rem;color:var(--accent-ink);letter-spacing:.03em;margin-bottom:12px}
   .pi p{margin:0 0 10px;color:var(--muted);max-width:66ch}
   .pi .creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
   .pi .creds span{font-size:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 11px;color:var(--fg)}
-  .roster{display:flex;flex-direction:column;gap:22px}
-  .rgroup .rlabel{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
-  .rlist{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px}
-  @media (max-width:680px){.rlist{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:440px){.rlist{grid-template-columns:1fr}}
-  .rlist .m{font-size:.96rem}
-  .rlist .m .kr{color:var(--muted);font-size:.85rem}
-  details.alumni{margin-top:28px;border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:0 20px}
-  details.alumni summary{cursor:pointer;padding:16px 0;font-weight:600;font-size:1rem;list-style:none}
-  details.alumni summary::-webkit-details-marker{display:none}
-  details.alumni summary::after{content:"＋";float:right;color:var(--accent-ink);font-family:var(--f-mono)}
-  details.alumni[open] summary::after{content:"－"}
-  .alist{columns:2;column-gap:28px;padding:4px 0 20px;font-size:.9rem;color:var(--muted)}
-  @media (max-width:560px){.alist{columns:1}}
-  .alist div{break-inside:avoid;padding:3px 0}
-  .alist b{color:var(--fg);font-weight:500}
+  figure.group{margin:0}
+  .group .ph{aspect-ratio:16/9;width:100%;border:1px dashed var(--line);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);text-align:center;padding:20px;overflow:hidden}
+  .group .ph img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+  .group .ph .ico{font-size:1.6rem}
+  .group figcaption{color:var(--muted);font-size:.86rem;margin-top:10px;text-align:center}
 
   .two-col{display:grid;grid-template-columns:1.25fr 1fr;gap:40px}
   @media (max-width:760px){.two-col{grid-template-columns:1fr;gap:28px}}
@@ -174,191 +160,128 @@
 <body>
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#top"><span class="dot"></span>KIM LAB · <span style="color:var(--muted)">Genome&nbsp;Editing</span></a>
+    <a class="brand" href="#top"><span class="dot"></span>KIM LAB<span class="btail"> · <span style="color:var(--muted)">Genome&nbsp;Editing</span></span></a>
     <span class="spacer"></span>
     <nav class="links">
-      <a href="#research">Research</a><a href="#tools">Tools</a><a href="#news">News</a>
-      <a href="#publications">Publications</a><a href="#people">People</a><a href="#join">Join</a>
+      <a href="#research"><span class="en">Research</span><span class="ko">연구</span></a>
+      <a href="#tools"><span class="en">Tools</span><span class="ko">도구</span></a>
+      <a href="#news"><span class="en">News</span><span class="ko">소식</span></a>
+      <a href="#publications"><span class="en">Publications</span><span class="ko">논문</span></a>
+      <a href="#people"><span class="en">People</span><span class="ko">구성원</span></a>
+      <a href="#join"><span class="en">Join</span><span class="ko">합류</span></a>
     </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
+    <button class="nbtn" id="langBtn" aria-label="Switch language"><span class="en">한국어</span><span class="ko">EN</span></button>
+    <button class="nbtn" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
   </div>
 </header>
 
 <main id="top">
   <div class="wrap">
     <section class="hero" style="border-top:none">
-      <p class="eyebrow">Yonsei University College of Medicine · Dept. of Pharmacology</p>
-      <h1 class="title">Engineering the genome with <em>precision</em> and prediction.</h1>
-      <p class="lede">We develop CRISPR–Cas systems, base editors, and prime editors — and the
-        deep-learning models that predict how they behave — to read the function of every genetic
-        variant and to correct disease in vivo.</p>
+      <p class="eyebrow"><span class="en">Yonsei University College of Medicine · Dept. of Pharmacology</span><span class="ko">연세대학교 의과대학 · 약리학교실</span></p>
+      <h1 class="title"><span class="en">Engineering the genome with <em>precision</em> and prediction.</span><span class="ko">정밀함과 <em>예측</em>으로 유전체를 편집합니다.</span></h1>
+      <p class="lede"><span class="en">We develop CRISPR–Cas systems, base editors, and prime editors — and the deep-learning models that predict how they behave — to read the function of every genetic variant and to correct disease in vivo.</span><span class="ko">저희 연구실은 CRISPR–Cas, 염기 교정(base editing), 프라임 교정(prime editing) 도구와 그 결과를 예측하는 딥러닝 모델을 개발합니다. 이를 통해 모든 유전 변이의 기능을 규명하고, 생체 내(in vivo)에서 질환을 교정하는 것을 목표로 합니다.</span></p>
       <div class="cta-row">
-        <a class="btn primary" href="https://deepcrispr.info" target="_blank" rel="noopener">Explore DeepGE ↗</a>
-        <a class="btn ghost" href="#join">Join the lab</a>
+        <a class="btn primary" href="https://deepcrispr.info" target="_blank" rel="noopener"><span class="en">Explore DeepGE ↗</span><span class="ko">DeepGE 바로가기 ↗</span></a>
+        <a class="btn ghost" href="#join"><span class="en">Join the lab</span><span class="ko">연구실 합류</span></a>
       </div>
       <div class="seq" aria-label="Illustrative prime-editing target sequence">
         <b><span class="G">G</span><span class="A">A</span><span class="G">G</span><span class="T">T</span><span class="C">C</span><span class="A">A</span><span class="G">G</span><span class="T">T</span>&nbsp;<span class="edit"><span class="G">G</span><span class="G">G</span><span class="A">A</span><span class="C">C</span></span>&nbsp;<span class="A">A</span><span class="A">A</span><span class="G">G</span><span class="T">T</span><span class="G">G</span><span class="C">C</span><span class="T">T</span><span class="A">A</span>&nbsp;<span class="C">C</span><span class="G">G</span><span class="G">G</span>&nbsp;<span class="T">T</span><span class="G">G</span><span class="G">G</span><span class="A">A</span></b>
-        <span class="cap">target &nbsp;·&nbsp; <span style="color:var(--accent-ink)">edited window</span> &nbsp;·&nbsp; PAM &nbsp;·&nbsp; predicted by DeepPrime</span>
+        <span class="cap"><span class="en">target · <span style="color:var(--accent-ink)">edited window</span> · PAM · predicted by DeepPrime</span><span class="ko">표적 · <span style="color:var(--accent-ink)">교정 구간</span> · PAM · DeepPrime 예측</span></span>
       </div>
     </section>
 
     <section id="research">
       <div class="sec-head"><span class="sec-num">01</span>
-        <div><h2>Research</h2>
-          <p class="sec-sub">Our aim is to develop novel therapeutic modalities for human diseases
-            through genome editing and gene therapy. Four threads run through the lab.</p></div></div>
-      <div class="themes">
-        <div class="theme"><span class="k">Prediction</span><h3>Deep learning for editing outcomes</h3>
-          <p>Models that predict the efficiency and precise outcome of Cas nucleases, base editors, and
-            prime editors from sequence alone — DeepSpCas9, DeepCpf1, DeepBE, DeepPrime and the DeepGE suite.</p></div>
-        <div class="theme"><span class="k">Engineering</span><h3>Better editors</h3>
-          <p>High-fidelity, high-activity variants such as Sniper2L, and prime editors boosted by
-            DNA-repair biology (hyPE2 with the Rad51 domain), built by elucidating how cells process an edit.</p></div>
-        <div class="theme"><span class="k">Function</span><h3>Reading every variant</h3>
-          <p>Saturation genome editing with prime and base editors to assign function and drug resistance
-            to clinical variants — ATM, ABL1, EGFR, ALK, and the androgen receptor.</p></div>
-        <div class="theme"><span class="k">Therapy</span><h3>In vivo gene correction</h3>
-          <p>Base and prime editing delivered in living animals — virus-like particles and non-viral
-            routes — to treat inherited diseases of the eye, liver, and ear.</p></div>
+        <div><h2><span class="en">Research</span><span class="ko">연구</span></h2>
+          <p class="sec-sub"><span class="en">Our aim is to develop novel therapeutic modalities for human diseases through genome editing and gene therapy. Four themes run through the lab.</span><span class="ko">유전자 교정과 유전자 치료를 통해 인간 질환을 위한 새로운 치료법을 개발하는 것이 목표입니다. 연구는 크게 네 가지 축으로 이뤄집니다.</span></p></div></div>
+      <div class="areas">
+        <div class="area"><div class="no">1</div>
+          <h3><span class="en">Deep learning for editing outcomes</span><span class="ko">유전자 교정 결과 예측 딥러닝</span></h3>
+          <p><span class="en">Models that predict the efficiency and precise outcome of Cas nucleases, base editors, and prime editors from sequence alone — DeepSpCas9, DeepCpf1, DeepBE, DeepPrime and the wider DeepGE suite.</span><span class="ko">서열만으로 Cas 뉴클레아제·염기 교정·프라임 교정의 효율과 결과를 예측하는 모델을 개발합니다 — DeepSpCas9, DeepCpf1, DeepBE, DeepPrime 등 DeepGE 제품군.</span></p></div>
+        <div class="area"><div class="no">2</div>
+          <h3><span class="en">Better genome editors</span><span class="ko">더 뛰어난 교정 도구 개발</span></h3>
+          <p><span class="en">High-fidelity, high-activity variants such as Sniper2L, and prime editors boosted by DNA-repair biology (hyPE2 with the Rad51 domain), built by elucidating how cells process an edit.</span><span class="ko">Sniper2L 같은 고정밀·고활성 변이체와, DNA 수선 기전을 활용해 성능을 높인 프라임 교정 도구(Rad51 도메인을 더한 hyPE2)를 개발합니다.</span></p></div>
+        <div class="area"><div class="no">3</div>
+          <h3><span class="en">Reading every variant</span><span class="ko">유전 변이의 기능 해독</span></h3>
+          <p><span class="en">Saturation genome editing with prime and base editors to assign function and drug resistance to clinical variants — ATM, ABL1, EGFR, ALK, and the androgen receptor.</span><span class="ko">프라임·염기 교정을 이용한 포화 유전자 교정(saturation genome editing)으로 임상 변이의 기능과 약물 내성을 규명합니다 — ATM, ABL1, EGFR, ALK, 안드로겐 수용체 등.</span></p></div>
+        <div class="area"><div class="no">4</div>
+          <h3><span class="en">In vivo gene correction</span><span class="ko">생체 내 유전자 교정 치료</span></h3>
+          <p><span class="en">Base and prime editing delivered in living animals — virus-like particles and non-viral routes — to treat inherited diseases of the eye, liver, and ear.</span><span class="ko">바이러스 유사 입자(VLP)와 비바이러스 전달로 생체 내에 염기·프라임 교정을 적용해 눈·간·귀의 유전 질환 치료를 연구합니다.</span></p></div>
       </div>
     </section>
 
     <section id="tools">
       <div class="sec-head"><span class="sec-num">02</span>
-        <div><h2>Tools</h2>
-          <p class="sec-sub">Our prediction models are free to use on <b>DeepGE</b>, a unified web
-            platform for CRISPR–Cas variants, base editors, and prime editors.</p></div></div>
-      <div class="tool-intro"><span class="pill">deepcrispr.info</span><span>Every tool opens its workflow on the DeepGE server.</span></div>
+        <div><h2><span class="en">Tools</span><span class="ko">웹 도구</span></h2>
+          <p class="sec-sub"><span class="en">Our prediction models are free to use on DeepGE, a unified web platform for CRISPR–Cas variants, base editors, and prime editors.</span><span class="ko">저희 예측 모델은 CRISPR–Cas 변이체·염기 교정·프라임 교정을 아우르는 통합 웹 플랫폼 DeepGE에서 무료로 사용할 수 있습니다.</span></p></div></div>
+      <div class="tool-intro"><span class="pill">deepcrispr.info</span><span><span class="en">Every tool opens its workflow on the DeepGE server.</span><span class="ko">각 도구는 DeepGE 서버의 워크플로로 연결됩니다.</span></span></div>
       <div class="tools" id="toolGrid"></div>
     </section>
 
     <section id="news">
       <div class="sec-head"><span class="sec-num">03</span>
-        <div><h2>News &amp; awards</h2>
-          <p class="sec-sub">Recent highlights from the lab.</p></div></div>
+        <div><h2><span class="en">News &amp; awards</span><span class="ko">소식 · 수상</span></h2>
+          <p class="sec-sub"><span class="en">Recent highlights from the lab.</span><span class="ko">연구실의 최근 소식입니다.</span></p></div></div>
       <div class="news" id="newsList"><div class="loading">Loading…</div></div>
     </section>
 
     <section id="publications">
       <div class="sec-head"><span class="sec-num">04</span>
-        <div><h2>Selected publications</h2>
-          <p class="sec-sub">A selection of recent work; each title links to the paper.</p></div></div>
+        <div><h2><span class="en">Selected publications</span><span class="ko">주요 논문</span></h2>
+          <p class="sec-sub"><span class="en">A selection of recent work; each title links to the paper.</span><span class="ko">최근 주요 논문입니다. 제목을 누르면 원문으로 연결됩니다.</span></p></div></div>
       <div id="pubList"><div class="loading">Loading…</div></div>
-      <p class="pub-more">Full, up-to-date lists on
-        <a href="https://orcid.org/0000-0002-4693-738X" target="_blank" rel="noopener">ORCID</a> and
-        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Kim+Hyongbum+Henry" target="_blank" rel="noopener">PubMed</a>.</p>
+      <p class="pub-more"><span class="en">Full, up-to-date lists on </span><span class="ko">전체 목록은 </span>
+        <a href="https://orcid.org/0000-0002-4693-738X" target="_blank" rel="noopener">ORCID</a><span class="en"> and </span><span class="ko"> · </span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Kim+Hyongbum+Henry" target="_blank" rel="noopener">PubMed</a><span class="ko"> 참고.</span></p>
     </section>
 
     <section id="people">
-      <div class="sec-head"><span class="sec-num">05</span><div><h2>People</h2></div></div>
+      <div class="sec-head"><span class="sec-num">05</span><div><h2><span class="en">People</span><span class="ko">구성원</span></h2></div></div>
       <div class="pi">
         <div class="avatar">HK</div>
         <div>
           <h3>Hyongbum Henry Kim, M.D., Ph.D.</h3>
-          <div class="role">Principal Investigator · Professor of Pharmacology · Yonsei Lee Youn Jae Fellow</div>
-          <p>Henry Kim develops CRISPR-based genome-editing tools, deep-learning methods to predict
-            their outcomes, and their application to gene therapy. MD (2001), MS (2003) and PhD in
-            Nano-science &amp; Technology (2006), Yonsei University; previously at Emory/Tufts, CHA, and
-            Hanyang before joining Yonsei in 2015.</p>
+          <div class="role"><span class="en">Principal Investigator · Professor of Pharmacology · Yonsei Lee Youn Jae Fellow</span><span class="ko">책임교수 (PI) · 약리학교실 교수 · 연세 이윤재 석좌펠로우</span></div>
+          <p><span class="en">Henry Kim develops CRISPR-based genome-editing tools, deep-learning methods to predict their outcomes, and their application to gene therapy. MD (2001), MS (2003) and PhD in Nano-science &amp; Technology (2006), Yonsei University; previously at Emory/Tufts, CHA, and Hanyang before joining Yonsei in 2015.</span><span class="ko">CRISPR 기반 유전자 교정 도구, 그 결과를 예측하는 딥러닝 기법, 그리고 유전자 치료 응용을 연구합니다. 연세대 의학사(2001)·석사(2003), 나노과학기술 박사(2006). Emory/Tufts, 차의과학대, 한양대를 거쳐 2015년부터 연세대 재직.</span></p>
           <div class="creds">
-            <span>Fellow, Korean Academy of Science &amp; Technology</span>
-            <span>Former Chair, Korean Assoc. for Genome Editing</span>
-            <span>Kyung-Ahm Prize (2021)</span>
-            <span>Pfizer Medical Research Award (2017)</span>
+            <span><span class="en">Fellow, Korean Academy of Science &amp; Technology</span><span class="ko">한국과학기술한림원 정회원</span></span>
+            <span><span class="en">Former Chair, Korean Assoc. for Genome Editing</span><span class="ko">전 한국유전자교정학회장</span></span>
+            <span><span class="en">Kyung-Ahm Prize (2021)</span><span class="ko">경암상 (2021)</span></span>
             <span>ORCID 0000-0002-4693-738X</span>
           </div>
         </div>
       </div>
-      <div class="roster">
-        <div class="rgroup"><div class="rlabel">Research Assistant Professors</div>
-          <div class="rlist">
-            <div class="m">Joo Hye Yeo <span class="kr">여주혜</span></div>
-            <div class="m">Ramu Gopalappa</div></div></div>
-        <div class="rgroup"><div class="rlabel">Postdoctoral Fellows</div>
-          <div class="rlist">
-            <div class="m">Hyeongcheol Oh <span class="kr">오형철</span></div>
-            <div class="m">Minyoung Lee <span class="kr">이민영</span></div>
-            <div class="m">Kwang Seob Lee <span class="kr">이광섭</span></div>
-            <div class="m">Yoo Jin Chang <span class="kr">장유진</span></div></div></div>
-        <div class="rgroup"><div class="rlabel">Graduate Students · Doctoral</div>
-          <div class="rlist">
-            <div class="m">Dongyoung Kim <span class="kr">김동영</span></div>
-            <div class="m">Hanahrae Lee <span class="kr">이한아래</span></div>
-            <div class="m">Joongoo Min <span class="kr">민준구</span></div>
-            <div class="m">Jinyeong Yang <span class="kr">양진영</span></div>
-            <div class="m">Seungmin Kwak <span class="kr">곽승민</span></div>
-            <div class="m">Yeonseung Han <span class="kr">한연승</span></div></div></div>
-        <div class="rgroup"><div class="rlabel">Graduate Students · Master</div>
-          <div class="rlist">
-            <div class="m">Banseok Kim <span class="kr">김반석</span></div>
-            <div class="m">Minche Son <span class="kr">손민채</span></div>
-            <div class="m">Eunseo Choi <span class="kr">최은서</span></div>
-            <div class="m">Seoyeon Ko <span class="kr">고서연</span></div>
-            <div class="m">Seungwoo Kim <span class="kr">김승우</span></div></div></div>
-        <div class="rgroup"><div class="rlabel">Researchers &amp; Staff</div>
-          <div class="rlist">
-            <div class="m">Jeong Kyung Park <span class="kr">박정경</span></div>
-            <div class="m">Kyungbaek Lee <span class="kr">이경백</span></div>
-            <div class="m">Sung Ah Kang <span class="kr">강성아</span></div>
-            <div class="m">Young-Hye Kim <span class="kr">김영혜</span></div>
-            <div class="m">Seonmi Park <span class="kr">박선미</span></div>
-            <div class="m">Sora Lee <span class="kr">이소라 · CRC</span></div>
-            <div class="m">Young Min Bae <span class="kr">배영민 · CRC</span></div></div></div>
-      </div>
-      <details class="alumni">
-        <summary>Alumni &amp; where they are now</summary>
-        <div class="alist">
-          <div><b>Hui Kwon Kim</b> — Asst. Prof., Sungkyunkwan Univ.</div>
-          <div><b>Suresh Ramakrishna</b> — Asst. Prof., Hanyang Univ.</div>
-          <div><b>Minjung Song</b> — Asst. Prof., Silla Univ.</div>
-          <div><b>Young Gwang Kim</b> — Asst. Prof., Catholic Univ.</div>
-          <div><b>Hee Chan Yoo</b> — Asst. Prof., Chung-Ang Univ.</div>
-          <div><b>Myungjae Song</b> — Asst. Prof., Gachon Univ.</div>
-          <div><b>Sung-Ik Cho</b> — Asst. Prof., KAIST</div>
-          <div><b>Junwon Lee</b> — Asst. Prof., Yonsei Univ. College of Medicine</div>
-          <div><b>Nahye Kim</b> — Postdoc, Harvard Medical School / MGH</div>
-          <div><b>Hyewon Jang</b> — Whitehead Institute</div>
-          <div><b>Jihye Park</b> — Memorial Sloan Kettering</div>
-          <div><b>Goosang Yu</b> — New York Genome Center</div>
-          <div><b>Yusang Jung</b> — Moderna Korea</div>
-          <div><b>Younghun Kim</b> — ToolGen</div>
-          <div><b>Sangeun Lee</b> — Daewoong</div>
-          <div><b>Eunseo Lee</b> — Samsung Biologics</div>
-          <div><b>Jungha Lee</b> — Bukwang Pharm.</div>
-          <div><b>Soobin Jung</b> — Dongnam Inst. of Radiological &amp; Medical Sciences</div>
-          <div><b>Seungho Lee</b> — Seoul National Univ. Hospital</div>
-          <div><b>Yunyoung Choi</b> — Seoul National Univ. Hospital</div>
-          <div><b>Soeon Park</b> — Bucheon St. Mary's Hospital</div>
-          <div><b>JeongHong Shin</b> — Amyloidsolution</div>
-          <div><b>Jungyoon Bae</b> — Research Assoc. Prof.</div>
-          <div>…and other former ZFN/TALEN/CRISPR lab members.</div>
+      <figure class="group">
+        <div class="ph" id="groupPhoto">
+          <div class="ico">📷</div>
+          <div><span class="en">Lab group photo — to be added</span><span class="ko">연구실 단체 사진 — 추후 추가</span></div>
         </div>
-      </details>
+        <figcaption><span class="en">Kim Lab members</span><span class="ko">김형범 연구실 구성원</span></figcaption>
+      </figure>
     </section>
 
     <section id="join">
-      <div class="sec-head"><span class="sec-num">06</span><div><h2>Join us &amp; contact</h2></div></div>
+      <div class="sec-head"><span class="sec-num">06</span><div><h2><span class="en">Join us &amp; contact</span><span class="ko">합류 · 연락</span></h2></div></div>
       <div class="two-col">
         <div class="join">
-          <h3>Open positions</h3>
-          <p>We recruit on an ongoing basis and welcome scientists from molecular &amp; cell biology,
-            genetics, biochemistry, bioinformatics, deep learning, medicine, structural and developmental biology.</p>
+          <h3><span class="en">Open positions</span><span class="ko">모집 분야</span></h3>
+          <p><span class="en">We recruit on an ongoing basis and welcome scientists from molecular &amp; cell biology, genetics, biochemistry, bioinformatics, deep learning, medicine, structural and developmental biology.</span><span class="ko">상시 모집합니다. 분자·세포생물학, 유전학, 생화학, 생명정보학, 딥러닝, 의학, 구조·발생생물학 등 다양한 배경의 연구자를 환영합니다.</span></p>
           <ul>
-            <li><b>Postdoctoral fellows &amp; research professors</b> — rolling admission, three interview rounds.</li>
-            <li><b>Graduate students</b> — full tuition, living stipend and performance incentives; apply 3–9 months before Yonsei's admission schedule via a lab internship.</li>
-            <li><b>Research staff &amp; undergraduate interns</b> — welcome year-round.</li>
+            <li><span class="en"><b>Postdoctoral fellows &amp; research professors</b> — rolling admission, three interview rounds.</span><span class="ko"><b>박사후연구원 · 연구교수</b> — 상시 모집, 3단계 면접.</span></li>
+            <li><span class="en"><b>Graduate students</b> — full tuition, living stipend and performance incentives; apply 3–9 months before Yonsei's admission schedule via a lab internship.</span><span class="ko"><b>대학원생</b> — 등록금 전액·생활비·성과 인센티브 지원. 입학 3~9개월 전 인턴십으로 지원 권장.</span></li>
+            <li><span class="en"><b>Research staff &amp; undergraduate interns</b> — welcome year-round.</span><span class="ko"><b>연구원 · 학부 인턴</b> — 수시 환영.</span></li>
           </ul>
-          <p>To apply, write to Prof. Kim with a short note about yourself and your CV.</p>
+          <p><span class="en">To apply, write to Prof. Kim with a short note about yourself and your CV.</span><span class="ko">지원은 김형범 교수에게 간단한 소개와 이력서(CV)를 보내주세요.</span></p>
         </div>
         <div class="contact-card">
-          <div class="crow"><span class="lbl">Email</span>
+          <div class="crow"><span class="lbl"><span class="en">Email</span><span class="ko">이메일</span></span>
             <span class="val">hkim1@yuhs.ac <button class="copy" data-copy="hkim1@yuhs.ac">Copy</button></span>
             <span class="val">aquamd@gmail.com <button class="copy" data-copy="aquamd@gmail.com">Copy</button></span></div>
-          <div class="crow"><span class="lbl">Phone</span><span class="val">+82-2-2228-0879 (office) · 0792 (lab)</span></div>
-          <div class="crow"><span class="lbl">Address</span>
-            <span class="val">Avison Biomedical Research Center (ABMRC) Room 504, Lab 318<br>
-            Yonsei University College of Medicine<br>50-1 Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea</span></div>
-          <div class="crow"><span class="lbl">Web tools</span>
+          <div class="crow"><span class="lbl"><span class="en">Phone</span><span class="ko">전화</span></span><span class="val">+82-2-2228-0879 <span class="en">(office)</span><span class="ko">(교수실)</span> · 0792 <span class="en">(lab)</span><span class="ko">(실험실)</span></span></div>
+          <div class="crow"><span class="lbl"><span class="en">Address</span><span class="ko">주소</span></span>
+            <span class="val"><span class="en">Avison Biomedical Research Center (ABMRC) Room 504, Lab 318<br>Yonsei University College of Medicine<br>50-1 Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea</span><span class="ko">서울시 서대문구 연세로 50-1<br>연세대학교 의과대학 에비슨의생명연구센터(ABMRC) 504호 (실험실 318호)<br>우 03722</span></span></div>
+          <div class="crow"><span class="lbl"><span class="en">Web tools</span><span class="ko">웹 도구</span></span>
             <span class="val"><a href="https://deepcrispr.info" target="_blank" rel="noopener">deepcrispr.info</a></span></div>
         </div>
       </div>
@@ -374,7 +297,14 @@
 </main>
 
 <script>
-  (function(){var root=document.documentElement,btn=document.getElementById('themeBtn');
+  var root=document.documentElement;
+  // language
+  (function(){try{var l=localStorage.getItem('yge-lang');}catch(e){}root.setAttribute('data-lang',l||'en');
+    document.getElementById('langBtn').addEventListener('click',function(){
+      var n=root.getAttribute('data-lang')==='en'?'ko':'en';root.setAttribute('data-lang',n);
+      try{localStorage.setItem('yge-lang',n);}catch(e){}});})();
+  // theme
+  (function(){var btn=document.getElementById('themeBtn');
     try{var s=localStorage.getItem('yge-theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
     function cur(){var a=root.getAttribute('data-theme');return a?a:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
     btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('yge-theme',n);}catch(e){}});})();
@@ -407,7 +337,6 @@
     a.innerHTML='<span class="name">'+t.n+' <span class="arrow">↗</span></span><span class="cat">'+t.c+'</span><span class="desc">'+esc(t.d)+'</span>';
     g.appendChild(a);});
 
-  // News — from news.json (the Slack bot appends here)
   fetch('news.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
     list.sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
     var el=document.getElementById('newsList'),h='';
@@ -416,7 +345,6 @@
     el.innerHTML=h||'<div class="loading">No news yet.</div>';
   }).catch(function(){document.getElementById('newsList').innerHTML='<div class="loading">News will appear here.</div>';});
 
-  // Publications — from publications.json (ORCID sync keeps current)
   fetch('publications.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
     list.sort(function(a,b){return b.y-a.y;});
     var el=document.getElementById('pubList'),h='',last=null;
@@ -426,7 +354,7 @@
   }).catch(function(){document.getElementById('pubList').innerHTML='<div class="loading">Publications will appear here.</div>';});
 
   document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
-    var t=b.getAttribute('data-copy');function ok(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1400);}
+    var t=b.getAttribute('data-copy');function ok(){var o=b.textContent;b.textContent='✓';setTimeout(function(){b.textContent=o;},1400);}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(fb);}else{fb();}
     function fb(){var r=document.createRange(),s=document.createElement('span');s.textContent=t;b.parentNode.insertBefore(s,b);r.selectNode(s);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);try{ok();}catch(e){}setTimeout(function(){sel.removeAllRanges();s.remove();},200);}
   });});
