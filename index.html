@@ -272,7 +272,11 @@
 
   footer.site{border-top:1px solid var(--line);padding-block:34px 44px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   footer .mono{font-family:var(--f-mono);font-size:.88rem}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:auto}
+  .totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--accent);color:#fff;font-size:1.25rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s ease;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .totop.show{opacity:1;pointer-events:auto}
+  :root[data-theme="dark"] .totop{color:#06201d}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .totop{color:#06201d}}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
   /* gallery */
@@ -302,13 +306,13 @@
     <span class="spacer"></span>
     <nav class="links">
       <a href="#research"><span class="en">Research</span><span class="ko">연구</span></a>
-      <a href="#tools"><span class="en">Research tools</span><span class="ko">연구용 도구</span></a>
-      <a href="#clinical"><span class="en">Clinical tools</span><span class="ko">임상용 도구</span></a>
+      <a href="#tools"><span class="en">Research tools</span><span class="ko">연구 도구</span></a>
+      <a href="#clinical"><span class="en">Clinical tools</span><span class="ko">임상 도구</span></a>
       <a href="#news"><span class="en">News</span><span class="ko">연구실 소식</span></a>
       <a href="#publications"><span class="en">Publications</span><span class="ko">논문</span></a>
       <a href="#people"><span class="en">People</span><span class="ko">구성원</span></a>
       <a href="#photos"><span class="en">Photos</span><span class="ko">갤러리</span></a>
-      <a href="#pi"><span class="en">PI</span><span class="ko">교수</span></a>
+      <a href="#pi"><span class="en">PI</span><span class="ko">교수 소개</span></a>
       <a href="#join"><span class="en">Join</span><span class="ko">함께하기</span></a>
     </nav>
     <button class="nbtn" id="langBtn" aria-label="Switch language"><span class="en">한국어</span><span class="ko">English</span></button>
@@ -347,7 +351,7 @@
 
     <section id="tools">
       <div class="sec-head"><span class="sec-num">02</span>
-        <div><h2><span class="en">Research tools</span><span class="ko">연구용 도구</span></h2>
+        <div><h2><span class="en">Research tools</span><span class="ko">연구 도구</span></h2>
           <p class="sec-sub"><span class="en">Our prediction models are free to use on DeepGE, a unified web platform for CRISPR–Cas variants, base editors, and prime editors.</span><span class="ko">저희 예측 모델은 CRISPR–Cas 변이체·염기 교정·프라임 교정을 아우르는 통합 웹 플랫폼 DeepGE에서 무료로 사용할 수 있습니다.</span></p></div></div>
       <div class="tool-intro"><span class="pill">deepcrispr.info</span></div>
       <div class="toolcats" id="toolGrid"></div>
@@ -355,7 +359,7 @@
 
     <section id="clinical">
       <div class="sec-head"><span class="sec-num">03</span>
-        <div><h2><span class="en">Clinical tools</span><span class="ko">임상용 도구</span></h2>
+        <div><h2><span class="en">Clinical tools</span><span class="ko">임상 도구</span></h2>
           <p class="sec-sub"><span class="en">Which mutation in a patient's tumour resists which drug. We install every variant of a gene by prime editing, treat the cells with the drugs used in the clinic, and read out the resistance.</span><span class="ko">환자 종양의 어떤 변이가 어떤 약에 내성을 보이는지 알려줍니다. 프라임 교정으로 유전자의 모든 변이를 만들고, 임상에서 쓰는 약을 처리해 내성을 측정했습니다.</span></p></div></div>
       <div class="toolcats" id="clinGrid"></div>
     </section>
@@ -449,7 +453,7 @@
     </section>
 
     <section id="pi">
-      <div class="sec-head"><span class="sec-num">08</span><div><h2><span class="en">Principal Investigator</span><span class="ko">교수</span></h2></div></div>
+      <div class="sec-head"><span class="sec-num">08</span><div><h2><span class="en">Principal Investigator</span><span class="ko">교수 소개</span></h2></div></div>
         <div class="pihead">
           <div class="piphoto"><span class="ini">HK</span><img src="photos/pi.jpg" alt="Hyongbum Henry Kim" onerror="this.remove()"></div>
           <div>
@@ -536,6 +540,8 @@
   </div>
 </main>
 
+<button class="totop" id="toTop" aria-label="Back to top">↑</button>
+
 <script>
   var root=document.documentElement;
   // language
@@ -557,6 +563,12 @@
     tog.addEventListener('click',function(e){ e.stopPropagation(); set(!hdr.classList.contains('menu-open')); });
     hdr.querySelectorAll('.links a').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
     document.addEventListener('click',function(e){ if(hdr.classList.contains('menu-open') && !hdr.contains(e.target)) set(false); });
+  })();
+  // back-to-top button
+  (function(){
+    var btn=document.getElementById('toTop'); if(!btn) return;
+    addEventListener('scroll',function(){ btn.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>600); },{passive:true});
+    btn.addEventListener('click',function(){ window.scrollTo(0,0); });
   })();
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
