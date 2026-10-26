@@ -48,11 +48,19 @@
   .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
   .nav .spacer{flex:1}
   .nav .links{display:flex;gap:15px}
+  .navtoggle{display:none}
   .nav .links a{color:var(--muted);font-size:.88rem;font-weight:500;white-space:nowrap}
   .nav .links a:hover{color:var(--fg);text-decoration:none}
   .nbtn{font:inherit;font-size:.88rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
   .nbtn:hover{color:var(--fg);border-color:var(--accent)}
-  @media (max-width:860px){.nav .links{display:none}}
+  @media (max-width:860px){
+    .nav .links{display:none}
+    .navtoggle{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:6px 11px;font-size:1.15rem;line-height:1}
+    header.site.menu-open .links{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:4px max(24px,env(safe-area-inset-left,0px)) 10px;box-shadow:0 14px 34px rgba(0,0,0,.22);max-height:74vh;overflow:auto}
+    header.site.menu-open .links a{padding:13px 2px;border-bottom:1px solid var(--line);font-size:1.02rem;color:var(--fg)}
+    header.site.menu-open .links a:last-child{border-bottom:0}
+    header.site.menu-open .links a:hover{color:var(--accent-ink);text-decoration:none}
+  }
   .wrap.nav{max-width:1240px}
   @media (max-width:1280px){.brand .btail{display:none}}
 
@@ -84,7 +92,7 @@
   .seq .edit{background:var(--accent-soft);color:var(--accent-ink);border-radius:3px;padding:1px 2px}
   .seq .cap{display:block;letter-spacing:.08em;font-size:.88rem;margin-top:10px;color:var(--muted);white-space:normal}
 
-  section{padding-block:clamp(44px,6vw,72px);border-top:1px solid var(--line)}
+  section{padding-block:clamp(44px,6vw,72px);border-top:1px solid var(--line);scroll-margin-top:68px}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px;flex-wrap:wrap}
   .sec-num{font-family:var(--f-mono);font-size:.88rem;color:var(--blue-ink);letter-spacing:.1em}
   h2{font-family:var(--f-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.015em;margin:0;text-wrap:balance}
@@ -305,6 +313,7 @@
     </nav>
     <button class="nbtn" id="langBtn" aria-label="Switch language"><span class="en">한국어</span><span class="ko">English</span></button>
     <button class="nbtn" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
+    <button class="nbtn navtoggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -540,6 +549,15 @@
     function cur(){var a=root.getAttribute('data-theme');return a?a:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
     btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('yge-theme',n);}catch(e){}});})();
   document.getElementById('yr').textContent=new Date().getFullYear();
+  // mobile nav menu (hamburger)
+  (function(){
+    var hdr=document.querySelector('header.site'), tog=document.getElementById('navToggle');
+    if(!hdr||!tog) return;
+    function set(open){ hdr.classList.toggle('menu-open',open); tog.setAttribute('aria-expanded',open?'true':'false'); tog.textContent=open?'\u2715':'\u2630'; }
+    tog.addEventListener('click',function(e){ e.stopPropagation(); set(!hdr.classList.contains('menu-open')); });
+    hdr.querySelectorAll('.links a').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
+    document.addEventListener('click',function(e){ if(hdr.classList.contains('menu-open') && !hdr.contains(e.target)) set(false); });
+  })();
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
   var TOOLCATS=[
