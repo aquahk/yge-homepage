@@ -312,7 +312,7 @@
   <div class="wrap">
     <section class="hero" style="border-top:none">
       <canvas class="hero-dna" id="dna" aria-hidden="true"></canvas>
-      <h1 class="title"><span class="en">From new genome technologies to <em>change in the clinic</em>.</span><span class="ko">유전체를 다루는 새로운 기술부터, <em>진료를 바꾸는 가능성</em>까지.</span></h1>
+      <h1 class="title"><span class="en">From new genome technologies to <em>change in patients' lives</em>.</span><span class="ko">유전체를 다루는 새로운 기술부터, <em>환자의 삶을 바꾸는 가능성</em>까지.</span></h1>
       <p class="lede"><span class="en">We develop the tools and the underlying technologies for controlling and designing the genome with precision. Building on artificial intelligence and large-scale genome-editing experiments, we create new technologies and use them to explore how life works. Our research runs from building the technology, to understanding life, to new diagnostics and therapies.</span><span class="ko">우리는 유전체를 정밀하게 조절하고 설계하기 위한 도구와 원천기술을 개발합니다. 인공지능과 대규모 유전자 교정 실험을 바탕으로 새로운 기술을 만들고, 그 기술로 생명 현상을 탐구합니다. 기술의 개발에서 생명의 이해로, 그리고 새로운 진단과 치료로 연구를 이어갑니다.</span></p>
     </section>
 
@@ -844,7 +844,12 @@
 
   /* Gentle scroll-reveal on sections (JS-added, so no-JS = fully visible; hero stays visible) */
   (function(){
-    if(matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window)) return;
+    // On touch / small screens, keep everything visible (no fade) — the scroll-reveal can
+    // otherwise leave a section stuck hidden during fast momentum scrolling on mobile.
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches
+       ||matchMedia('(hover:none),(pointer:coarse)').matches
+       ||innerWidth<760
+       ||!('IntersectionObserver' in window)) return;
     var secs=[].slice.call(document.querySelectorAll('main > .wrap > section:not(.hero), main section:not(.hero)'));
     if(!secs.length) return;
     secs.forEach(function(s){s.classList.add('reveal');});
@@ -853,6 +858,8 @@
     },{rootMargin:'0px 0px -6% 0px',threshold:0.03});
     secs.forEach(function(s){io.observe(s);});
     requestAnimationFrame(function(){ secs.forEach(function(s){ if(s.getBoundingClientRect().top<innerHeight*0.92)s.classList.add('in'); }); });
+    // safety net: never leave a section hidden even if the observer misses one
+    setTimeout(function(){ secs.forEach(function(s){ s.classList.add('in'); }); }, 2500);
   })();
 
     </script>
