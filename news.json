@@ -169,5 +169,15 @@
     "post_ko": "연세대 의대 안과학교실 임상조교수",
     "now_en": "now Associate Professor",
     "now_ko": "현재 부교수"
+  },
+  {
+    "date": "2026-09",
+    "kind": "appointment",
+    "person_en": "Kwangseob Lee",
+    "person_ko": "이광섭",
+    "role_en": "Ph.D. student and postdoctoral fellow",
+    "role_ko": "박사 및 박사후연구원",
+    "post_en": "Assistant Professor, Seoul National University",
+    "post_ko": "서울대 조교수"
   }
 ]
