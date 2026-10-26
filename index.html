@@ -842,25 +842,10 @@
     start();
   })();
 
-  /* Gentle scroll-reveal on sections (JS-added, so no-JS = fully visible; hero stays visible) */
-  (function(){
-    // On touch / small screens, keep everything visible (no fade) — the scroll-reveal can
-    // otherwise leave a section stuck hidden during fast momentum scrolling on mobile.
-    if(matchMedia('(prefers-reduced-motion:reduce)').matches
-       ||matchMedia('(hover:none),(pointer:coarse)').matches
-       ||innerWidth<760
-       ||!('IntersectionObserver' in window)) return;
-    var secs=[].slice.call(document.querySelectorAll('main > .wrap > section:not(.hero), main section:not(.hero)'));
-    if(!secs.length) return;
-    secs.forEach(function(s){s.classList.add('reveal');});
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{rootMargin:'0px 0px -6% 0px',threshold:0.03});
-    secs.forEach(function(s){io.observe(s);});
-    requestAnimationFrame(function(){ secs.forEach(function(s){ if(s.getBoundingClientRect().top<innerHeight*0.92)s.classList.add('in'); }); });
-    // safety net: never leave a section hidden even if the observer misses one
-    setTimeout(function(){ secs.forEach(function(s){ s.classList.add('in'); }); }, 2500);
-  })();
+  /* Scroll-reveal fade removed on purpose: sections are now always visible.
+     A JS/IntersectionObserver fade could leave a section (and its title) stuck
+     hidden on some devices — foldables/DeX reporting a fine pointer, in-app
+     browsers where the observer doesn't fire — so content no longer depends on it. */
 
     </script>
 </body>
