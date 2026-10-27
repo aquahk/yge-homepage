@@ -237,6 +237,26 @@
   .rlist .m .who{min-width:0;line-height:1.4}
   .rlist .m .bio{display:block;color:var(--muted);font-size:.88rem;margin-top:1px}
   .rlist .m.pilink:hover .av,.rlist .m.pilink:focus-visible .av{border-color:var(--accent)}
+  /* members with a photo/intro (people.json) open a profile dialog */
+  .rlist .m.has{cursor:pointer;border-radius:12px;margin:-6px;padding:6px;transition:background .15s}
+  .rlist .m.has:hover,.rlist .m.has:focus-visible{background:var(--surface);outline:none}
+  .rlist .m.has:focus-visible{box-shadow:0 0 0 2px var(--accent)}
+  .rlist .m.has:hover .av{border-color:var(--accent)}
+  .mdlg{border:0;padding:0;border-radius:18px;background:var(--bg);color:var(--fg);width:min(520px,92vw);
+    max-height:92vh;overflow:auto;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+  .mdlg::backdrop{background:rgba(8,10,16,.74)}
+  .mdlg .mdph{background:var(--surface-2)}
+  .mdlg .mdph img{display:block;width:100%;max-height:64vh;object-fit:contain}
+  .mdlg .mdph:empty,.mdlg .mdph.none{display:none}
+  .mdlg .mdtx{padding:20px 24px 26px}
+  .mdlg .mdrole{font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
+  .mdlg h3{font-family:var(--f-display);font-weight:600;font-size:1.4rem;margin:0;line-height:1.3}
+  .mdlg h3 .kr{font-family:var(--f-body);font-size:1rem;color:var(--muted);font-weight:400;margin-left:8px}
+  .mdlg .mdintro{margin:12px 0 0;color:var(--muted);font-size:1rem;line-height:1.65;white-space:pre-line}
+  .mdlg .mdintro:empty{display:none}
+  .mdlg .x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(8,10,16,.55);color:#fff;font-size:1.4rem;line-height:1;display:flex;align-items:center;justify-content:center}
+  .mdlg .x:hover{background:rgba(8,10,16,.8)}
   details.alumni{margin-top:28px;border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:0 20px}
   details.alumni summary{cursor:pointer;padding:16px 0;font-weight:600;font-size:1rem;list-style:none}
   details.alumni summary::-webkit-details-marker{display:none}
@@ -430,12 +450,17 @@
         <div class="rgroup"><div class="rlabel"><span class="en">Postdoctoral Fellows</span><span class="ko">박사후연구원</span></div>
           <div class="rlist"><div class="m">Hyeongcheol Oh <span class="kr">오형철</span></div><div class="m">Minyoung Lee <span class="kr">이민영</span></div><div class="m">Kwang Seob Lee <span class="kr">이광섭</span></div><div class="m">Yoo Jin Chang <span class="kr">장유진</span></div></div></div>
         <div class="rgroup"><div class="rlabel"><span class="en">Graduate Students · Doctoral</span><span class="ko">대학원생 · 박사과정</span></div>
-          <div class="rlist"><div class="m">Dongyoung Kim <span class="kr">김동영</span></div><div class="m">Hanahrae Lee <span class="kr">이한아래</span></div><div class="m">Joongoo Min <span class="kr">민준구</span></div><div class="m">Jinyeong Yang <span class="kr">양진영</span></div><div class="m">Seungmin Kwak <span class="kr">곽승민</span></div><div class="m" data-photo="photos/people/yeonseung-han.jpg">Yeonseung Han <span class="kr">한연승</span><span class="bio"><span class="en">Devoted butler to Hongcha, my pup</span><span class="ko">홍차 집사입니다.</span></span></div></div></div>
+          <div class="rlist"><div class="m">Dongyoung Kim <span class="kr">김동영</span></div><div class="m">Hanahrae Lee <span class="kr">이한아래</span></div><div class="m">Joongoo Min <span class="kr">민준구</span></div><div class="m">Jinyeong Yang <span class="kr">양진영</span></div><div class="m">Seungmin Kwak <span class="kr">곽승민</span></div><div class="m">Yeonseung Han <span class="kr">한연승</span></div></div></div>
         <div class="rgroup"><div class="rlabel"><span class="en">Graduate Students · Master</span><span class="ko">대학원생 · 석사과정</span></div>
-          <div class="rlist"><div class="m" data-photo="photos/people/banseok-kim.jpg">Banseok Kim <span class="kr">김반석</span><span class="bio"><span class="en">Burgers &amp; dumplings enthusiast...</span><span class="ko">햄버거와 만두를 좋아해요...</span></span></div><div class="m">Minche Son <span class="kr">손민채</span></div><div class="m">Eunseo Choi <span class="kr">최은서</span></div><div class="m">Seoyeon Ko <span class="kr">고서연</span></div><div class="m">Seungwoo Kim <span class="kr">김승우</span></div></div></div>
+          <div class="rlist"><div class="m">Banseok Kim <span class="kr">김반석</span></div><div class="m">Minche Son <span class="kr">손민채</span></div><div class="m">Eunseo Choi <span class="kr">최은서</span></div><div class="m">Seoyeon Ko <span class="kr">고서연</span></div><div class="m">Seungwoo Kim <span class="kr">김승우</span></div></div></div>
         <div class="rgroup"><div class="rlabel"><span class="en">Researchers</span><span class="ko">연구원</span></div>
           <div class="rlist"><div class="m">Sung Ah Kang <span class="kr">강성아</span></div><div class="m">Young-Hye Kim <span class="kr">김영혜</span></div><div class="m">Seonmi Park <span class="kr">박선미</span></div></div></div>
       </div>
+      <dialog class="mdlg" id="memberDlg" aria-labelledby="mdName">
+        <button class="x" type="button" aria-label="Close">×</button>
+        <div class="mdph"><img alt=""></div>
+        <div class="mdtx"><div class="mdrole"></div><h3 id="mdName"></h3><p class="mdintro"></p></div>
+      </dialog>
       <details class="alumni">
         <summary><span class="en">Alumni &amp; where they are now</span><span class="ko">동문 · 현 소속</span></summary>
         <div class="alist">
@@ -923,6 +948,43 @@
     if(p){var im=document.createElement('img');im.alt='';im.loading='lazy';im.onerror=function(){im.remove();};im.src=p;av.appendChild(im);}
     m.appendChild(av);m.appendChild(who);
   });
+  // member photos & intros from people.json (written by the Slack bot) — click opens a profile dialog (not for the PI)
+  (function(){
+    var dlg=document.getElementById('memberDlg');if(!dlg||!window.fetch)return;
+    var dImg=dlg.querySelector('.mdph img'),dPh=dlg.querySelector('.mdph'),dRole=dlg.querySelector('.mdrole'),
+        dName=dlg.querySelector('h3'),dIntro=dlg.querySelector('.mdintro');
+    function bi(en,ko){var f=document.createDocumentFragment();
+      [['en',en||ko],['ko',ko||en]].forEach(function(x){if(!x[1])return;var s=document.createElement('span');s.className=x[0];s.textContent=x[1];f.appendChild(s);});
+      return f;}
+    function open(m,p){
+      var g=m.closest('.rgroup'),lab=g&&g.querySelector('.rlabel');
+      dRole.innerHTML=lab?lab.innerHTML:'';
+      dName.textContent='';dName.appendChild(document.createTextNode(m.getAttribute('data-name')+' '));
+      var kr=m.querySelector('.who .kr');if(kr)dName.appendChild(kr.cloneNode(true));
+      var src=p.photo_l||p.photo;
+      if(src){dPh.classList.remove('none');dImg.src=src+'?v='+(p.updated||'');dImg.alt=m.getAttribute('data-name');}
+      else{dPh.classList.add('none');dImg.removeAttribute('src');}
+      dIntro.textContent='';dIntro.appendChild(bi(p.intro_en||p.bio_en,p.intro_ko||p.bio_ko));
+      if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+    }
+    function close(){if(dlg.close)dlg.close();else dlg.removeAttribute('open');}
+    dlg.querySelector('.x').addEventListener('click',close);
+    dlg.addEventListener('click',function(e){if(e.target===dlg)close();});
+    fetch('people.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(j){
+      if(!j||!j.members)return;
+      document.querySelectorAll('.rlist .m:not(.pilink)').forEach(function(m){
+        var who=m.querySelector('.who'),t=who&&who.firstChild&&who.firstChild.nodeType===3?who.firstChild.nodeValue.trim():'';
+        var p=j.members[t];if(!p||!(p.photo||p.bio_en||p.bio_ko))return;
+        if(p.photo){var av=m.querySelector('.av'),old=av.querySelector('img');if(old)old.remove();
+          var im=document.createElement('img');im.alt='';im.loading='lazy';im.onerror=function(){im.remove();};
+          im.src=p.photo+'?v='+(p.updated||'');av.appendChild(im);}
+        if(p.bio_en||p.bio_ko){var b=document.createElement('span');b.className='bio';b.appendChild(bi(p.bio_en,p.bio_ko));who.appendChild(b);}
+        m.setAttribute('data-name',t);m.classList.add('has');m.tabIndex=0;m.setAttribute('role','button');m.setAttribute('aria-haspopup','dialog');
+        m.addEventListener('click',function(){open(m,p);});
+        m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(m,p);}});
+      });
+    }).catch(function(){});
+  })();
 
   /* Scroll-reveal fade removed on purpose: sections are now always visible.
      A JS/IntersectionObserver fade could leave a section (and its title) stuck

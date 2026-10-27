@@ -1,0 +1,26 @@
+{
+  "members": {
+    "Banseok Kim": {
+      "photo": "photos/people/banseok-kim.jpg",
+      "photo_l": "photos/people/banseok-kim-l.jpg",
+      "bio_en": "Burgers & dumplings enthusiast...",
+      "bio_ko": "햄버거와 만두를 좋아해요...",
+      "updated": "202610272300",
+      "src": [
+        "1793077606.008879",
+        "1793077624.279159"
+      ]
+    },
+    "Yeonseung Han": {
+      "photo": "photos/people/yeonseung-han.jpg",
+      "photo_l": "photos/people/yeonseung-han-l.jpg",
+      "bio_en": "Devoted butler to Hongcha, my pup",
+      "bio_ko": "홍차 집사입니다.",
+      "updated": "202610272300",
+      "src": [
+        "1793077662.903629",
+        "1793077674.047529"
+      ]
+    }
+  }
+}
