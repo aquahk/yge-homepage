@@ -269,6 +269,7 @@
   /* click-to-open history rollups under News */
   .badge.appointment{color:var(--base-g);background:rgba(31,111,235,.12)}
   .badge.degree{color:var(--base-a);background:rgba(47,143,78,.12)}
+  .badge.event{color:var(--plum-ink);background:rgba(142,52,115,.10)}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge.appointment{background:rgba(96,165,250,.14)}
     :root:not([data-theme="light"]) .badge.degree{background:rgba(74,222,128,.14)}}
   :root[data-theme="dark"] .badge.appointment{background:rgba(96,165,250,.14)}
@@ -335,6 +336,12 @@
   .lb .prev{left:16px;top:50%;transform:translateY(-50%)}
   .lb .next{right:16px;top:50%;transform:translateY(-50%)}
   @media (max-width:560px){.lb .prev{left:8px}.lb .next{right:8px}.lb figcaption{bottom:10px;font-size:.85rem}}
+  .lb.single .prev,.lb.single .next{display:none}
+  /* news rows that carry photos */
+  [data-ph]{cursor:zoom-in;border-radius:8px;transition:background .15s;margin-left:-8px;margin-right:-8px;padding-left:8px;padding-right:8px}
+  [data-ph]:hover,[data-ph]:focus-visible{background:var(--surface);outline:none}
+  [data-ph]:focus-visible{box-shadow:0 0 0 2px var(--accent)}
+  .phic{display:inline-flex;vertical-align:-2px;margin-left:8px;color:var(--accent-ink)}
 </style>
 </head>
 <body>
@@ -744,20 +751,60 @@
     render('toolGrid',TOOLCATS); render('clinGrid',CLINICAL);
   })();
 
+  // shared photo lightbox (gallery grid + news items that carry photos); items are {f, en, ko} under photos/gallery/
+  var LB=(function(){
+    var lb=null,list=[],cur=0,lbImg,lbCap;
+    function cap(p){var en=(p.en||p.ko||'').trim(), ko=(p.ko||p.en||'').trim();
+      if(!en&&!ko) return '';
+      if(en===ko) return esc(en);
+      return '<span class="en">'+esc(en)+'</span><span class="ko">'+esc(ko)+'</span>';}
+    function show(i){cur=(i+list.length)%list.length;var p=list[cur];
+      lbImg.src='photos/gallery/'+p.f; lbCap.innerHTML=cap(p);}
+    function close(){lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow='';}
+    function build(){
+      lb=document.createElement('div'); lb.className='lb';
+      lb.innerHTML='<button class="x" aria-label="Close">✕</button>'+
+        '<button class="prev" aria-label="Previous">‹</button>'+
+        '<button class="next" aria-label="Next">›</button>'+
+        '<img alt=""><figcaption></figcaption>';
+      document.body.appendChild(lb);
+      lbImg=lb.querySelector('img'); lbCap=lb.querySelector('figcaption');
+      lb.querySelector('.x').addEventListener('click',close);
+      lb.querySelector('.prev').addEventListener('click',function(e){e.stopPropagation(); show(cur-1);});
+      lb.querySelector('.next').addEventListener('click',function(e){e.stopPropagation(); show(cur+1);});
+      lb.addEventListener('click',function(e){if(e.target===lb) close();});
+      document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;
+        if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(cur-1); else if(e.key==='ArrowRight')show(cur+1);});
+    }
+    function open(l,i){if(!l||!l.length)return; if(!lb)build(); list=l;
+      lb.classList.toggle('single',l.length<2); show(i||0); lb.classList.add('open'); document.body.style.overflow='hidden';}
+    return {cap:cap,open:open};
+  })();
+  // news rows with photos: camera mark + click/Enter opens them in the lightbox
+  var PH=[];
+  function phAttr(n){if(!(n.photos&&n.photos.length))return '';PH.push(n);
+    return ' data-ph="'+(PH.length-1)+'" tabindex="0" role="button"';}
+  var PH_ICON='<span class="phic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></span>';
+  function phOpen(el){var n=PH[+el.getAttribute('data-ph')];if(!n)return;
+    var en=n.title_en||n.title||((n.person_en||'')+(n.post_en?' — '+n.post_en:'')),ko=n.title_ko||n.title||((n.person_ko||'')+(n.post_ko?' — '+n.post_ko:''));
+    LB.open(n.photos.map(function(f){return {f:f,en:en,ko:ko};}),0);}
+  document.addEventListener('click',function(e){var r=e.target.closest('[data-ph]');if(r)phOpen(r);});
+  document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.hasAttribute&&e.target.hasAttribute('data-ph')){e.preventDefault();phOpen(e.target);}});
+
   // bilingual field: uses <base>_en / <base>_ko when present (toggled by the lang switch),
   // falling back to a single <base> value shown in both languages.
   function bi(n,b){var en=n[b+'_en'],ko=n[b+'_ko'],one=n[b];
     if(en||ko){en=en||ko;ko=ko||en;return en===ko?esc(en):'<span class="en">'+esc(en)+'</span><span class="ko">'+esc(ko)+'</span>';}
     return one!=null?esc(one):'';}
   // badge wording per kind, in both languages
-  var KIND={paper:['Paper','논문'],award:['Award','수상'],appointment:['Appointment','임용'],degree:['Degree','학위'],news:['News','소식']};
+  var KIND={paper:['Paper','논문'],award:['Award','수상'],appointment:['Appointment','임용'],degree:['Degree','학위'],event:['Event','행사'],news:['News','소식']};
   function kindLabel(k){var p=KIND[k]||KIND.news;
     return '<span class="en">'+esc(p[0])+'</span><span class="ko">'+esc(p[1])+'</span>';}
   // the PI's own prizes belong in the feed, not in the trainee list
   function isPI(n){return /(^|\s)(Hyongbum|김형범)\b/.test(String(n.title_en||n.title||''));}
   var FEED_MAX=8;
-  // News carries faculty appointments, trainee awards and degrees only
-  var SHOW={appointment:1,award:1,degree:1};
+  // News carries faculty appointments, trainee awards and degrees, and notable lab events (talks, meetings, retreats)
+  var SHOW={appointment:1,award:1,degree:1,event:1};
   function shown(n){var k=(n.kind||'news').toLowerCase();return SHOW[k]&&!(k==='award'&&isPI(n));}
 
   // appointment row: 2015  Suresh Ramakrishna (postdoctoral fellow)  Assistant Professor, Hanyang University (now Professor)
@@ -772,7 +819,7 @@
   function rollup(rows,listId,nId,empty){
     rows.sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
     var h=rows.map(function(n){var d=bi(n,'detail');
-      return '<div class="r"><div class="when">'+esc(n.date)+'</div><div><div class="who">'+line(n)+'</div>'+
+      return '<div class="r"'+phAttr(n)+'><div class="when">'+esc(n.date)+'</div><div><div class="who">'+line(n)+(n.photos&&n.photos.length?PH_ICON:'')+'</div>'+
              (d?'<div class="what">'+d+'</div>':'')+'</div></div>';}).join('');
     document.getElementById(listId).innerHTML=h||'<div class="loading">'+empty+'</div>';
     document.getElementById(nId).textContent=rows.length||'';
@@ -782,7 +829,7 @@
     list.sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
     var el=document.getElementById('newsList'),h='';
     list.filter(shown).slice(0,FEED_MAX).forEach(function(n){var k=(n.kind||'news').toLowerCase();var d=bi(n,'detail');
-      h+='<div class="item"><div class="when">'+esc(n.date)+'</div><div class="body"><div class="h"><span class="badge '+esc(k)+'">'+kindLabel(k)+'</span>'+line(n)+'</div>'+(d?'<div class="d">'+d+'</div>':'')+'</div></div>';});
+      h+='<div class="item"'+phAttr(n)+'><div class="when">'+esc(n.date)+'</div><div class="body"><div class="h"><span class="badge '+esc(k)+'">'+kindLabel(k)+'</span>'+line(n)+(n.photos&&n.photos.length?PH_ICON:'')+'</div>'+(d?'<div class="d">'+d+'</div>':'')+'</div></div>';});
     el.innerHTML=h||'<div class="loading">No news yet.</div>';
 
     rollup(list.filter(function(n){return (n.kind||'')==='appointment';}),
@@ -817,36 +864,15 @@
     el.innerHTML=h||'<div class="loading">No publications yet.</div>';
   }).catch(function(){document.getElementById('pubList').innerHTML='<div class="loading">Publications will appear here.</div>';});
 
-  // ---- photo gallery + lightbox ----
+  // ---- photo gallery + news photos ----
   (function(){
     var grid=document.getElementById('galleryGrid'); if(!grid) return;
-    function cap(p){var en=(p.en||p.ko||'').trim(), ko=(p.ko||p.en||'').trim();
-      if(!en&&!ko) return '';
-      if(en===ko) return esc(en);
-      return '<span class="en">'+esc(en)+'</span><span class="ko">'+esc(ko)+'</span>';}
     fetch('gallery.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
       if(!list||!list.length){grid.innerHTML='';return;}
-      grid.innerHTML=list.map(function(p,i){var c=cap(p);
+      grid.innerHTML=list.map(function(p,i){var c=LB.cap(p);
         return '<figure class="gcell" data-i="'+i+'"><img loading="lazy" src="photos/gallery/'+esc(p.f)+'" alt="">'+
           (c?'<figcaption>'+c+'</figcaption>':'')+'</figure>';}).join('');
-      var lb=document.createElement('div'); lb.className='lb';
-      lb.innerHTML='<button class="x" aria-label="Close">\u2715</button>'+
-        '<button class="prev" aria-label="Previous">\u2039</button>'+
-        '<button class="next" aria-label="Next">\u203a</button>'+
-        '<img alt=""><figcaption></figcaption>';
-      document.body.appendChild(lb);
-      var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('figcaption'), cur=0;
-      function show(i){cur=(i+list.length)%list.length;var p=list[cur];
-        lbImg.src='photos/gallery/'+p.f; lbCap.innerHTML=cap(p);}
-      function open(i){show(i); lb.classList.add('open'); document.body.style.overflow='hidden';}
-      function close(){lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow='';}
-      grid.addEventListener('click',function(e){var f=e.target.closest('.gcell'); if(f) open(+f.getAttribute('data-i'));});
-      lb.querySelector('.x').addEventListener('click',close);
-      lb.querySelector('.prev').addEventListener('click',function(e){e.stopPropagation(); show(cur-1);});
-      lb.querySelector('.next').addEventListener('click',function(e){e.stopPropagation(); show(cur+1);});
-      lb.addEventListener('click',function(e){if(e.target===lb) close();});
-      document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;
-        if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(cur-1); else if(e.key==='ArrowRight')show(cur+1);});
+      grid.addEventListener('click',function(e){var f=e.target.closest('.gcell'); if(f) LB.open(list,+f.getAttribute('data-i'));});
     }).catch(function(){ grid.innerHTML=''; });
   })();
 
