@@ -1027,6 +1027,25 @@
      browsers where the observer doesn't fire — so content no longer depends on it. */
 
     </script>
+<script>
+/* Section view counts (cookieless): a section counts once per page load after it sits in the middle of the screen for 1 s;
+   outbound link clicks count by the section they are in. Sends only section + kind to stats.yge.kr — no cookies or IDs. */
+(function(){
+  var E='https://stats.yge.kr/e', IDS=['research','tools','clinical','news','publications','pi','people','photos','join'], seen={};
+  function send(s,k){try{navigator.sendBeacon(E+'?s='+s+'&k='+k)}catch(e){}}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target,id=t.id;
+      if(e.isIntersecting){t._yt=setTimeout(function(){if(!seen[id]){seen[id]=1;send(id,'view')}},1000)}else{clearTimeout(t._yt)}})},
+      {rootMargin:'-40% 0px -40% 0px'});
+    IDS.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[href]');if(!a||!/^https?:/.test(a.href)||a.host===location.host)return;
+    var sec=null;for(var i=0;i<IDS.length;i++){var el=document.getElementById(IDS[i]);if(el&&el.contains(a)){sec=IDS[i];break}}
+    send(sec||'other','click');
+  },true);
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff3f23fe401343b39ca91f462f959193"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
